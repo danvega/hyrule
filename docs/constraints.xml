@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<constraints>
+	<constraint>
+		<name>Array</name>
+		<usage>@Array</usage>
+		<description>check that the value is a valid array</description>
+		<error-message>{display} is an invalid array.</error-message>
+		<type>hyrule.validator.ArrayValidator</type>		
+	</constraint>	
+	<constraint>
+		<name>Assert True</name>
+		<usage>@AssertTrue</usage>
+		<description>check that the value is true</description>
+		<error-message>assertion failed</error-message>
+		<type>hyrule.validator.AssertTrueValidator</type>
+	</constraint>
+	<constraint>
+		<name>Assert False</name>
+		<usage>@AssertFalse</usage>
+		<description>check that the value is false</description>
+		<error-message>assertion failed</error-message>
+		<type>hyrule.validator.AssertFalseValidator</type>
+	</constraint>	
+	<constraint>
+		<name>Binary</name>
+		<usage>@Binary</usage>
+		<description>check that the value is a valid binary value</description>
+		<error-message>{display} is an invalid binary object.</error-message>
+		<type>hyrule.validator.BinaryValidator</type>		
+	</constraint>		
+	<constraint>
+		<name>Boolean</name>
+		<usage>@Boolean</usage>
+		<description>check that the value is a valid boolean value</description>
+		<error-message>{display} is not a valid boolean value</error-message>
+		<type>hyrule.validator.BooleanValidator</type>		
+	</constraint>	
+	<constraint>
+		<name>Credit Card Number</name>
+		<usage>@CreditCardNumber</usage>
+		<description>check that the value is a valid credit card number</description>
+		<error-message>{display} is an invalid credit card number.</error-message>
+		<type>hyrule.validator.CreditCardNumberValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Date</name>
+		<usage>@Date</usage>
+		<description>check that the value is a valid date</description>
+		<error-message>{display} is an invalid date.</error-message>
+		<type>hyrule.validator.DateValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Email</name>
+		<usage>@Email</usage>
+		<description>check that the value is a valid email address</description>
+		<error-message>{display} is an invalid email address.</error-message>
+		<type>hyrule.validator.EmailValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Future</name>
+		<usage>@Future</usage>
+		<description>checks that the value is in the future relative to now() (default) or the date if a date is provided.</description>
+		<error-message>{display} must be a future date.</error-message>
+		<type>hyrule.validator.FutureValidator</type>		
+	</constraint>
+	<constraint>
+		<name>GUID</name>
+		<usage>@GUID</usage>
+		<description>check that the value is a valid GUID</description>
+		<error-message>{display} is an invalid guid.</error-message>
+		<type>hyrule.validator.GUIDValidator</type>		
+	</constraint>
+	<constraint>
+		<name>In List</name>
+		<usage>@InList {list}</usage>
+		<description>check that the value is in the list provided</description>
+		<error-message>The value for {display} is not in the list {list}.</error-message>
+		<type>hyrule.validator.InListValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Is Match</name>
+		<usage>@IsMatch {match}</usage>
+		<description>checks to see if the current property matches the string provided or another property value by using {propertyname}</description>
+		<error-message>The value for {display} is not the same as {ismatch}.</error-message>
+		<type>hyrule.validator.IsMatchValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Lowercase</name>
+		<usage>@Lowercase</usage>
+		<description>check that the value is all lowercase</description>
+		<error-message>{display} must be lower case.</error-message>
+		<type>hyrule.validator.LowerCaseValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Max</name>
+		<usage>@Min {max}</usage>
+		<description>checks that a string is at least max number of characters or that a number is at least eqaul to max</description>
+		<error-message>{display} must be less than or equal to {max}.</error-message>
+		<type>hyrule.validator.MaxValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Min</name>
+		<usage>@Min {min}</usage>
+		<description>checks that a string is at least min number of characters or that a number is at least eqaul to min</description>
+		<error-message>{display} must be greater than or equal to {min}.</error-message>
+		<type>hyrule.validator.MinValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Not Empty</name>
+		<usage>@NotEmpty {trimWhitespace}</usage>
+		<description>Checks that a value is not empty. By default (@NotNull | @NotNull true) will trim the whitespace from a string.</description>
+		<error-message>The field {display} must contain a value.</error-message>
+		<type>hyrule.validator.NotEmptyValidator</type>	
+	</constraint>
+	<constraint>
+		<name>Not In List</name>
+		<usage>@NotInList {list}</usage>
+		<description>checks that a value is not in the list provided</description>
+		<error-message>The value for {display} is in the list {list} and should not be.</error-message>
+		<type>hyrule.validator.NotInListValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Numeric</name>
+		<usage>@Numeric</usage>
+		<description>checks that a value is numeric</description>
+		<error-message>{display} is not a valid numeric value.</error-message>
+		<type>hyrule.validator.NumericValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Password</name>
+		<usage>@Password {min,max,level}</usage>
+		<description>checks that the value is greater than min, less than max and passes security level.</description>
+		<error-message>{display} is not a valid password.</error-message>
+		<type>hyrule.validator.PasswordValidator</type>		
+	</constraint>	
+	<constraint>
+		<name>Past</name>
+		<usage>@Past {date}</usage>
+		<description>checks that the value is in the past relative to now() (default) or the date if a date is provided.</description>
+		<error-message>{display} must be a past date.</error-message>
+		<type>hyrule.validator.PastValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Pattern</name>
+		<usage>@Pattern {pattern}</usage>
+		<description></description>
+		<error-message></error-message>
+		<type>hyrule.validator.PatternValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Phone</name>
+		<usage>@Phone</usage>
+		<description>checks that the value is a valid phone number.</description>
+		<error-message>{display} is an invalid phone number.</error-message>
+		<type>hyrule.validator.PhoneValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Query</name>
+		<usage>@Query</usage>
+		<description>checks that a value is a query object</description>
+		<error-message>{display} is an invalid query.</error-message>
+		<type>hyrule.validator.QueryValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Range</name>
+		<usage>@Range {start,end}</usage>
+		<description>checks that the value is greater than or equal to start and less than or equal end.</description>
+		<error-message>{display} does not fall between the range of {range}.</error-message>
+		<type>hyrule.validator.RangeValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Size</name>
+		<usage>@Size {min,max}</usage>
+		<description>checks that the length of a list,array or struct falls between the min and max attribute values.</description>
+		<error-message>{display} does not fall between the size {min} - {max}.</error-message>
+		<type>hyrule.validator.SizeValidator</type>		
+	</constraint>	
+	<constraint>
+		<name>Social Security Number</name>
+		<usage>@SSN</usage>
+		<description>checks that the value is a valid social security number.</description>
+		<error-message>{display} is an invalid social security number.</error-message>
+		<type>hyrule.validator.SSNValidator</type>		
+	</constraint>	
+	<constraint>
+		<name>String</name>
+		<usage>@String</usage>
+		<description>checks that the value is a valid string.</description>
+		<error-message>{display} is an invalid string.</error-message>
+		<type>hyrule.validator.StringValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Struct</name>
+		<usage>@Struct</usage>
+		<description>checks that the value is a valid struct.</description>
+		<error-message>{display} is an invalid struct.</error-message>
+		<type>hyrule.validator.StructValidator</type>		
+	</constraint>
+	<constraint>
+		<name>URL</name>
+		<usage>@URL</usage>
+		<description>checks that the value is a valid URL.</description>
+		<error-message>{display} is an invalid URL.</error-message>
+		<type>hyrule.validator.URLValidator</type>		
+	</constraint>
+	<constraint>
+		<name>Uppercase</name>
+		<usage>@Uppercase</usage>
+		<description>checks that the value is a string in all uppercase.</description>
+		<error-message>{display} must be upper case.</error-message>
+		<type>hyrule.validator.UpperCaseValidator</type>		
+	</constraint>		
+	<constraint>
+		<name>UUID</name>
+		<usage>@UUID</usage>
+		<description>checks that the value is a valid UUID.</description>
+		<error-message>{display} is an invalid UUID.</error-message>
+		<type>hyrule.validator.UUIDValidator</type>		
+	</constraint>
+	<constraint>
+		<name>VariableName</name>
+		<usage>@VariableName</usage>
+		<description>Checks that the value is a valid variable name.</description>
+		<error-message>{display} is an invalid variable name.</error-message>
+		<type>hyrule.validator.VariableNameValidator</type>		
+	</constraint>	
+	<constraint>
+		<name>Zip Code</name>
+		<usage>@ZipCode</usage>
+		<description>checks that the value is a valid U.S., 5- or 9-digit format ZIP codes.</description>
+		<error-message>{display} is an invalid zip code.</error-message>
+		<type>hyrule.validator.ZipCodeValidator</type>		
+	</constraint>			
+</constraints>	

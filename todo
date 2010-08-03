@@ -1,0 +1,21 @@
+When validating something like an email address,phone number or ssn there are some things to consider
+
+ * you may not always want them to validate (not required) 
+ * you should probably check for length first
+ * if you want to validate that a field is not empty and is a phone a number
+   
+   @NotEmpty
+   @Phone
+   
+   
+What about validating relationships
+
+ * need to try a couple of examples
+ *
+ 
+What about context
+
+ * not all validations should happen all of the time
+ * context should default to context="*"
+ * you could use context="save,changePassword"
+     

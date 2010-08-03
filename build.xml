@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Hyrule" default="build" basedir=".">
+    
+	<description>This is a simple build file to create a zip file for distribution</description>	
+	
+	<property name="version" value=".71"/>
+	
+	<target name="start">
+		<echo message="---------------- START HYRULE BUILD ----------------"/>
+		<tstamp/>
+	</target>
+	
+	<target name="build" depends="start">
+		<zip zipfile="build/${ant.project.name}-v${version}.zip" 
+			 basedir="."
+			 update="true"
+			 excludes="build/**,.settings/**,**/settings.xml,**/build.xml,**/.project"/>
+			 
+	</target>
+	
+</project>

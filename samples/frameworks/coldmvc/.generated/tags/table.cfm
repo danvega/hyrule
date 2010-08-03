@@ -1,0 +1,1 @@
+<cfinclude template="/coldmvc/tags/table.cfm" />

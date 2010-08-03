@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans autowire="byname">
+	
+	<bean id="Hyrule" class="cfc.hyrule.validator" singleton="true">
+		<constructor-arg name="rb">
+			<value>DefaultValidatorMessages</value>
+		</constructor-arg>
+	</bean>	
+	
+</beans>

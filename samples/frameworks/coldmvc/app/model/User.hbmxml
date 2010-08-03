@@ -1,0 +1,34 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class entity-name="User" lazy="true"
+        name="cfc:coldmvc.app.model.User" table="`User`">
+        <id name="id" type="string">
+            <column name="ID"/>
+        </id>
+        <property name="firstname" type="string">
+            <column name="Firstname"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="Lastname"/>
+        </property>
+        <property name="email" type="string">
+            <column name="Email"/>
+        </property>
+        <property name="username" type="string">
+            <column name="Username"/>
+        </property>
+        <property name="password" type="string">
+            <column name="Password"/>
+        </property>
+        <property name="passwordConfirm" type="string">
+            <column name="Password_Confirm"/>
+        </property>
+        <property name="createdOn" type="string">
+            <column name="Created_On"/>
+        </property>
+        <property name="updatedOn" type="string">
+            <column name="Updated_On"/>
+        </property>
+    </class>
+</hibernate-mapping>
