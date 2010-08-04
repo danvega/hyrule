@@ -76,12 +76,12 @@ component {
 						}
 
 						case "INLIST" : {
-							var validator = new rules.InListValidator();
+							validator = new rules.InListValidator();
 							break;
 						}
 
 						case "NOTINLIST" : {
-							var validator = new rules.NotInListValidator();
+							validator = new rules.NotInListValidator();
 							break;
 						}
 						
@@ -96,11 +96,11 @@ component {
 						}
 
 						case "ASSERTTRUE" : {
-							var validator = new rules.AssertTrueValidator();
+							validator = new rules.AssertTrueValidator();
 							break;
 						}
 						case "ASSERTFALSE" : {
-							var validator = new rules.AssertFalseValidator();
+							validator = new rules.AssertFalseValidator();
 							break;
 						}
 
@@ -130,7 +130,7 @@ component {
 						}
 
 						case "SSN" : {
-							var validator = new rules.SSNValidator();
+							validator = new rules.SSNValidator();
 							break;
 						}
 
@@ -205,7 +205,7 @@ component {
 						}
 
 						case "ISMATCH" : {
-							var validator = new rules.IsMatchValidator();
+							validator = new rules.IsMatchValidator();
 							
 							// if we find a {} in the is match property we are looking to match a value and not a string
 							var propertyMatch = reMatchNoCase("({)([\w])+?(})",prop.isMatch);
@@ -213,9 +213,9 @@ component {
 							if( arrayLen(propertyMatch) ) {
 								var property = reReplaceNoCase(propertyMatch[1],"({)([\w]+)(})","\2");
 																
-								for(var i=1; i<=arrayLen(props); i++){
-									if(props[i].name == property){
-										prop.compareto = props[i].value;
+								for(var x=1; x<=arrayLen(props); x++){
+									if( props[x].name == property && structKeyExists(props[x],"value") ){
+										prop.compareto = props[x].value;
 									}
 								}
 							} else {
