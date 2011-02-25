@@ -62,11 +62,5 @@ Validators (not all have been implemented yet)
  - This folder contains some examples and tutorials.  
  
  
- TODO: 
- 
- Rules to work on still
- -----------------------------
- 
- PatternValidator
- NotNullValidator
+ TODO:
  
