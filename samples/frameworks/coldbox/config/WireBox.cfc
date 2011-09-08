@@ -59,7 +59,7 @@ Description :
 		map("ValidationService")
 			.to("hyrule.system.core.Hyrule")
 			.asSingleton()
-			.initWith({validator="annotation",rbPath="/hyrule/samples/frameworks/coldbox/includes/i18n"});
+			.initWith({validator=getProperty('validator'),rbPath=getProperty('rbPath')});
 		
 	}	
 </cfscript>

@@ -70,6 +70,12 @@ function configure(){
 		eventCaching			= false
 	};
 	
+	// global settings - if you wanted to you could move these to environment specific settings
+	settings = {
+		validator="annotation",
+		rbPath="/hyrule/samples/frameworks/coldbox/includes/i18n"
+	};
+	
 	// environment settings, create a detectEnvironment() method to detect it yourself.
 	// create a function with the name of the environment so it can be executed if that environment is detected
 	// the value of the environment is a list of regex patterns to match the cgi.http_host.
