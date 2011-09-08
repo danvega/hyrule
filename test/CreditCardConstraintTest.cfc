@@ -1,7 +1,9 @@
-﻿component extends="mxunit.framework.TestCase" {
+﻿import hyrule.system.core.constraint.CreditCardConstraint;
+
+component extends="mxunit.framework.TestCase" {
 
 	public void function setup(){
-		creditCardConstraint = new hyrule.core.constraint.CreditCardConstraint();
+		creditCardConstraint = new CreditCardConstraint();
 		user = new model.user();
 	}
 	
@@ -28,7 +30,7 @@
 		
 	/**
 	 * @param creditCard (boolean)
-	 * @mxunit:expectedException ConstrainedProperty.CREDIT_CARD_CONSTRAINT
+	 * @mxunit:expectedException CREDIT_CARD_CONSTRAINT.INVALID_CONSTRAINT
 	 */
 	public void function testNonBooleanConstraintParameterThrowsError() {
 		creditCardConstraint.setConstraintParameter('str');

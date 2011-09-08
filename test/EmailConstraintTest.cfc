@@ -1,7 +1,9 @@
-﻿component extends="mxunit.framework.TestCase" {
+﻿import hyrule.system.core.constraint.EmailConstraint;
+
+component extends="mxunit.framework.TestCase" {
 
 	public void function setup(){
-		emailConstraint = new hyrule.core.constraint.emailConstraint();
+		emailConstraint = new EmailConstraint();
 		user = new model.user();
 	}
 	
@@ -34,7 +36,7 @@
 	}
 		
 	/**
-	 * @mxunit:expectedException ConstrainedProperty.EMAIL_CONSTRAINT
+	 * @mxunit:expectedException EMAIL_CONSTRAINT.INVALID_CONSTRAINT
 	 */
 	public void function testNonBooleanConstraintParameterThrowsError() {
 		emailConstraint.setConstraintParameter('str');

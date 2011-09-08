@@ -2,10 +2,13 @@
  * A valid constraint parameter looks like this 1..10
  * Valid tests on size are Numeric Range,String Length,Array Length,Struct Key Count 
  */
+ 
+import hyrule.system.core.constraint.SizeConstraint;
+ 
 component extends="mxunit.framework.TestCase" {
 
 	public void function setup(){
-		sizeConstraint = new hyrule.core.constraint.sizeConstraint();
+		sizeConstraint = new SizeConstraint();
 		user = new model.user();
 	}
 	
@@ -64,7 +67,7 @@ component extends="mxunit.framework.TestCase" {
 	/**
 	 * We are expecting a string in the format of (\d+..\d+)
 	 * 
-	 * @mxunit:expectedException ConstrainedProperty.SIZE_CONSTRAINT
+	 * @mxunit:expectedException SIZE_CONSTRAINT.INVALID_CONSTRAINT
 	 */
 	public void function testNonSizeConstraintParameterThrowsError() {
 		sizeConstraint.setConstraintParameter('1-10');

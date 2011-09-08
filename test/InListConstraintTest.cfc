@@ -1,7 +1,9 @@
-﻿component extends="mxunit.framework.TestCase" {
+﻿import hyrule.system.core.constraint.InListConstraint;
+
+component extends="mxunit.framework.TestCase" {
 
 	public void function setup(){
-		inListConstraint = new hyrule.core.constraint.InListConstraint();
+		inListConstraint = new InListConstraint();
 		user = new model.user();
 	}
 	
@@ -21,7 +23,7 @@
 	}
 		
 	/**
-	 * @mxunit:expectedException ConstrainedProperty.INLIST_CONSTRAINT
+	 * @mxunit:expectedException INLIST_CONSTRAINT.INVALID_CONSTRAINT
 	 */
 	public void function testNonStringConstraintParameterThrowsError() {
 		inListConstraint.setConstraintParameter([]);

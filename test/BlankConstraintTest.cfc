@@ -1,7 +1,9 @@
-﻿component extends="mxunit.framework.TestCase" {
+﻿import hyrule.system.core.constraint.BlankConstraint;
+
+component extends="mxunit.framework.TestCase" {
 
 	public void function setup(){
-		blankConstraint = new hyrule.core.constraint.BlankConstraint();
+		blankConstraint = new BlankConstraint();
 		user = new model.user();
 	}
 	
@@ -26,7 +28,7 @@
 	}
 	
 	/**
-	 * @mxunit:expectedException ConstrainedProperty.BLANK_CONSTRAINT
+	 * @mxunit:expectedException BLANK_CONSTRAINT.INVALID_CONSTRAINT
 	 */
 	public void function testNonBooleanConstraintParameterThrowsError() {
 		blankConstraint.setConstraintParameter('str');
