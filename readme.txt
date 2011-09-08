@@ -4,7 +4,7 @@ Hyrule Validation Framework
 	Data validation has always been a one of those repetitive processes that 
 	I always wanted to standardize. With that I set out to create a framework
 	that would make data validation simple, fun and very flexible. Enter 
-	Hyrule, a frameowrk that will create a consistent and easy to use 
+	Hyrule, a framework that will create a consistent and easy to use 
 	validation layer in your next project.
 
 
