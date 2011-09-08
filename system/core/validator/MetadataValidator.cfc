@@ -8,11 +8,6 @@ component accessors="true" extends="BaseValidator" implements="IValidator" {
 		var result = new ValidationResult(getValidationMessage());
 
 		for(var x=1; x<= arrayLen(properties); ++x) {
-				
-			// we are only validating columns
-			// we can't use !structKeyExists(properties[x],"fieldtype") || properties[x].fieldtype == "column")
-			// for non orm objects there is no fieldtype key
-			// not sure why... structKeyExists(meta,'persistent') && !structKeyExists(properties[x],"fieldtype"
 			
 			var name = properties[x].name;
 						
@@ -24,7 +19,6 @@ component accessors="true" extends="BaseValidator" implements="IValidator" {
 					
 					// if the key in this constraint does not contain a context then we always validate
 					// if it does contain a context then we only validate this if the context matches
-					// or the properties context exists but the validation context is *										
 					if( arguments.context == "*" || listFindNoCase(arguments.context,name) ) {
 						
 						var obj = getConstraints()[key];						
@@ -42,9 +36,7 @@ component accessors="true" extends="BaseValidator" implements="IValidator" {
 								);
 						}
 						
-						// validate it
 						if( !obj.validate(target,properties[x].name,value) ){														
-							// set errors
 							result.addError(meta.name,'property',properties[x],key);
 						}							
 					}

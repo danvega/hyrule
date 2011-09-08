@@ -15,6 +15,12 @@ Hyrule Validation Process
 	4.) Pass your component into Hyrule's validate() method and receive a result
 	5.) Check to see if your object passed validation and if it did not get a list of errors that were found
 
+Requirements
+--------------------------------------------------------------------------------------------------------------------
+	
+	ColdFusion 9
+	
+
 Installation
 --------------------------------------------------------------------------------------------------------------------
 
