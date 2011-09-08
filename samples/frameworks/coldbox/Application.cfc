@@ -15,9 +15,6 @@ component extends="coldbox.system.Coldbox" {
 	COLDBOX_CONFIG_FILE = "";
 	COLDBOX_APP_KEY = "";
 	
-	// MAPPINGS
-	this.mappings["/hyrule"] = "c:\www\hyrule";
-	
 	// ORM SETTINGS
 	this.ormEnabled = true;
 	this.datasource = "hellohyrule";

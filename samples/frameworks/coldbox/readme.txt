@@ -11,6 +11,7 @@ Requirements
 
 Installation	
 --------------------------------------------------------------------------------------------------------------------
-
-	To run the sample application you will need a mapping setup in ColdFusion for /coldbox
 	
+	Mappings
+	/coldbox 	(points to ColdBox 3.1 folder)
+	/hyrule 	(you should already have this one in place)
