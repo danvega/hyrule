@@ -13,7 +13,7 @@
 	 */
 	property name="sort" ormtype="int";
 	
-	property name="products" fieldtype="many-to-many" cfc="hyrule.samples.frameworks.fw1.model.product.Product" linktable="product_categories" 
+	property name="products" fieldtype="many-to-many" cfc="hyrule.samples.frameworks.fw1.model.Product" linktable="product_categories" 
 			 fkcolumn="category_id" inversejoincolumn="product_id" lazy="true" cascade="all" singularname="product" inverse="true";
 
 }

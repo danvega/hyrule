@@ -15,7 +15,7 @@
 	/** 
 	 * @size 1..-1
 	 */
-	property name="categories" fieldtype="many-to-many" cfc="hyrule.samples.frameworks.fw1.model.category.Category" linktable="product_categories" 
+	property name="categories" fieldtype="many-to-many" cfc="hyrule.samples.frameworks.fw1.model.Category" linktable="product_categories" 
 		 fkcolumn="product_id" inversejoincolumn="category_id" lazy="true" cascade="all" singularname="category";
 	
 	
