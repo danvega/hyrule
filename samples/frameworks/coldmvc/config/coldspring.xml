@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	
+	<bean id="validationService" class="hyrule.system.core.Hyrule" singleton="true">
+		<constructor-arg name="config">
+			<map>
+				<entry key="validator">
+					<value>annotation</value>
+				</entry>
+				<entry key="rbPath">
+					<value>/hyrule/samples/frameworks/coldmvc/public/i18n</value>
+				</entry>
+			</map>	
+		</constructor-arg>	
+	</bean>
+	
+</beans>

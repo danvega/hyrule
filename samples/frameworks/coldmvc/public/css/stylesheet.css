@@ -1,0 +1,20 @@
+body {background:#F7F7F7;}
+h2 {margin-bottom:15px;}
+#header {
+	padding:10px 0 0 0;
+}
+.container {
+
+}
+.content-wrapper {
+	padding:0 20px;
+	margin:20px 0 0 0;
+	background:#fff;
+	min-height:600px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;	
+}
+
+form {
+	margin-top:20px;
+}
