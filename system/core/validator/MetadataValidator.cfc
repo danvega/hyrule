@@ -27,18 +27,14 @@ component accessors="true" extends="BaseValidator" implements="IValidator" {
 						// set the constraint property
 						obj.setConstraintParameter(properties[x][key]);
 
-						// a null property is an error by the developer not the user, throw an error
-						if( isNull(value) ){							
-							throw(
-								type="AnnotationValidator",
-								message="You are trying to validate a null property"
-								detail="The prorperty #properties[x].name# is null. Please make sure you have populated the property."
-								);
-						}
-						
-						if( !obj.validate(target,properties[x].name,value) ){														
+						if( isNull(value) ){
+							// if the value is null the constraint check has failed, no need to validate the value
 							result.addError(meta.name,'property',properties[x],key);
-						}							
+						} else {
+							if( !obj.validate(target,properties[x].name,value) ){														
+								result.addError(meta.name,'property',properties[x],key);
+							}
+						}						
 					}
 				
 				} else {

@@ -1,4 +1,4 @@
-﻿<cfparam name="category_id" default="">
+<cfset coldmvc.factory.get("viewHelperManager").addViewHelpers(variables) /><cfparam name="category_id" default="">
 
 <h2>Category Editor</h2>
 
@@ -6,7 +6,7 @@
 
 	<cfif structKeyExists(params,"errors")>
 		<div class="alert-message block-message error">
-			<a class="close" href="##">×</a>
+			<a class="close" href="##">�</a>
 			<ul>
 				<cfloop array="#errors#" index="error">
 					<li>#error#</li>

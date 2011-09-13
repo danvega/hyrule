@@ -16,7 +16,8 @@ component extends="coldmvc.Application" {
 		cfclocation = '/hyrule/samples/frameworks/coldmvc/app/model',
 		logsql = true,
 		useDBForMapping = false,
-		secondaryCacheEnabled = false
+		secondaryCacheEnabled = false,
+		eventHandler = 'coldmvc.app.util.EventHandler'
 	};
 	
 	public void function onRequestStart(){

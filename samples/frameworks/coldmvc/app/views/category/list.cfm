@@ -5,7 +5,7 @@
 	<cfif structKeyExists(params,"success")>
 		<div class="alert-message success">
         	<a class="close" href="##">×</a>
-       		<p>#rc.success#</p>
+       		<p>#success#</p>
       	</div>	
 	</cfif>
 		

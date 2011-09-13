@@ -5,10 +5,10 @@
 		<constructor-arg name="config">
 			<map>
 				<entry key="validator">
-					<value>annotation</value>
+					<value>${validator}</value>
 				</entry>
 				<entry key="rbPath">
-					<value>/hyrule/samples/frameworks/coldmvc/public/i18n</value>
+					<value>${rbPath}</value>
 				</entry>
 			</map>	
 		</constructor-arg>	

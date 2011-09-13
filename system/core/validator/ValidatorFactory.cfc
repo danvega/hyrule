@@ -41,12 +41,12 @@ component accessors="true" {
 					break;
 				}				
 				default : {
-					obj = new AnnotationValidator();
+					obj = new AnnotationValidator();					
 					break;					
 				}
 			}
 			variables.cache[type] = obj;
-		}
+		}		
 		
 		// set the constraint factory in our validator object
 		obj.setConstraintFactory( new ConstraintFactory() );		
