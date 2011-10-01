@@ -1,36 +1,43 @@
-﻿component accessors="true" extends="coldmvc.Controller" {
+﻿/**
+ * @accessors true
+ * @action list
+ * @extends coldmvc.Controller
+ */
+component {
 
 	property validationService;
 
-	public void function list(){
-		params.categories = _Category.list();
-	}
-	
-	public void function edit(){
-		param name="params.category_id" default="";
-				
-		if( !structKeyExists(params,"category") ){
-	        params.category = _Category.get( params.category_id );			
-		}
-		
-	}
-	
-	public void function save(){		
-		var category = _Category.get( params.category_id );
-		category.populate(params);
-		
-		var result = validationService.validate(category);
+	function list() {
 
-		if( !result.hasErrors() ){
-			category.save();
- 			flash.success = "Category Saved!";
-        	redirect({action="list"});
-		} else {
-			// preserve some data on redirect
-			flash.errors = result.getErrorMessages();
-			flash.category = category;
-			redirect({action="edit"});			
+		params.categories = _Category.list();
+
+	}
+
+	function edit() {
+
+		var id = getParam("id");
+		var category = _Category.get(id);
+
+		if (isPost()) {
+
+			category.populate(params.category);
+
+			var result = validationService.validate(category);
+
+			if (result.hasErrors()) {
+
+				params.errors = result.getErrorMessages();
+
+			} else {
+
+				category.save();
+	 			flash.success = "Category Saved!";
+	        	redirect({action="list"});
+			}
+
 		}
+
+		params.category = category;
 
 	}
 

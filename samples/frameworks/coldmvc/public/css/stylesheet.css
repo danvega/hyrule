@@ -18,3 +18,7 @@ h2 {margin-bottom:15px;}
 form {
 	margin-top:20px;
 }
+
+select[multiple="true"] {
+	height: 100px;
+}

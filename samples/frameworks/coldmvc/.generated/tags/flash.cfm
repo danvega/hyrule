@@ -5,9 +5,9 @@
 	<cfparam name="attributes.id" default="" />
 	<cfparam name="attributes.class" default="flash" />
 
-	<cfif structKeyExists(params, attributes.key)>
+	<cfif coldmvc.flash.isValidKey(attributes.key)>
 		<div<cfif attributes.id neq ""> id="#attributes.id#"</cfif><cfif attributes.class neq ""> class="#attributes.class#"</cfif>>
-			#params[attributes.key]#
+			#escape(params[attributes.key])#
 		</div>
 	</cfif>
 

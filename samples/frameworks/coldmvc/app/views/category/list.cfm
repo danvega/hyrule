@@ -1,37 +1,29 @@
-﻿<h3>Categories</h3>
-
-<cfoutput>
-	
-	<cfif structKeyExists(params,"success")>
-		<div class="alert-message success">
-        	<a class="close" href="##">×</a>
-       		<p>#success#</p>
-      	</div>	
-	</cfif>
-		
-	<table class="zebra-striped">
-		<thead>
+﻿<cfoutput>
+<h3>Categories</h3>
+<h:success />
+<table class="zebra-striped">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Sort</th>
+			<th>Product Count</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:each in="#categories#" do="category">
 			<tr>
-				<th>Id</th>
-				<th>Name</th>
-				<th>Sort</th>
-				<th>Product Count</th>
-				<th>Actions</th>
+				<td>#category.id()#</td>
+				<td>#escape(category.name())#</td>
+				<td>#escape(category.sort())#</td>
+				<td>#arrayLen(category.products())#</td>
+				<td><a href="#linkTo({action='edit', id=category})#">Edit</a></td>
 			</tr>
-		</thead>
-		<tbody>
-			<cfloop array="#categories#" index="category">
-			<tr>
-				<td>#category.getId()#</td>	
-				<td>#category.getName()#</td>	
-				<td>#category.getSort()#</td>	
-				<td>#arrayLen(category.getProducts())#</td>
-				<td><a href="#linkTo('/category/edit')#/#category.getId()#">Edit</a></td>
-			</tr>
-			</cfloop>
-		</tbody>
-	</table>
-	
-	<p align="right"><a href="#linkTo('/category/edit')#"><button class="btn primary">Add New Category</button></a></p>
-
+		</c:each>
+	</tbody>
+</table>
+<p align="right">
+	<c:button url="#linkTo({action='edit'})#" label="Add New Category" class="primary" />
+</p>
 </cfoutput>

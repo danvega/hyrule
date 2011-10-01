@@ -1,38 +1,48 @@
-﻿component accessors="true" extends="coldmvc.Controller" {
+﻿/**
+ * @accessors true
+ * @action list
+ * @extends coldmvc.Controller
+ */
+component {
 
 	property validationService;
 	property _Category;
 
-	public void function list(){
-		params.products = _Product.list();
-	}
-	
-	public void function edit(){
-		param name="params.product_id" default="";
-				
-		if( !structKeyExists(params,"product") ){
-	        params.product = _Product.get( params.product_id );			
-		}
-		
-		params.categories = _Category.list();
-	}
-	
-	public void function save(){		
-		var product = _Product.get( params.product_id );
-		product.populate(params);
-		
-		var result = validationService.validate(product);
+	function list() {
 
-		if( !result.hasErrors() ){
-			product.save();
- 			flash.success = "Product Saved!";
-        	redirect({action="list"});
-		} else {
-			// preserve some data on redirect
-			flash.errors = result.getErrorMessages();
-			flash.product = product;
-			redirect({action="edit"});			
+		params.products = _Product.list();
+
+	}
+
+	function edit() {
+
+		var id = getParam("id");
+		var product = _Product.get(id);
+
+		if (isPost()) {
+
+			product.populate(params.product);
+
+			var result = validationService.validate(product);
+
+			if (result.hasErrors()) {
+
+				params.errors = result.getErrorMessages();
+
+			} else {
+
+				product.save();
+	 			flash.success = "Product Saved!";
+	        	redirect({action="list"});
+			}
+
 		}
+
+		params.product = product;
+		params.categories = _Category.list({
+			sort = "sort",
+			order = "asc"
+		});
 
 	}
 
