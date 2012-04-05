@@ -27,7 +27,16 @@ component accessors="true" {
 				return messages[i].message;
 			}
 		}
-		
+
+		// isvalid(type) is a special case
+		if( constraint == "isvalid" ){
+			for(i=1; i <= arrayLen(messages); ++i){
+				if(messages[i].type == "type." & prop.isvalid){
+					return replaceTemplateText(messages[i].message,prop);
+				}
+			}
+		}		
+
 		for(x=1; x<= arrayLen(messages); ++x){
 			if(messages[x].type == constraint){
 				return replaceTemplateText(messages[x].message,prop);	

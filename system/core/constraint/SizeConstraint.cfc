@@ -1,4 +1,10 @@
-﻿component extends="AbstractConstraint" accessors="true" {
+﻿/** 
+ * SizeConstraint
+ * 
+ * @hint
+ *
+ */
+component extends="AbstractConstraint" accessors="true" {
 
 	property name="size";
 

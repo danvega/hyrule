@@ -9,10 +9,10 @@ component accessors="true" {
 	public array function getProperties(Struct meta){
 		var props = [];
 		
-		if( structKeyExists(meta,"constraints") ){
-				for(var x=1; x <= arrayLen(meta.constraints); x++){
-					arrayAppend(props,meta.constraints[x]);
-				}				
+		if( structKeyExists(this,"constraints") ){
+			for(var x=1; x <= arrayLen(meta.constraints); x++){
+				arrayAppend(props,meta.constraints[x]);
+			}
 		} else {
 			if( !isNull(meta.properties) ){
 				for(var x=1; x <= arrayLen(meta.properties); x++){

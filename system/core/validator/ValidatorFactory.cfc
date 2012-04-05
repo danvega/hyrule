@@ -16,7 +16,7 @@ component accessors="true" {
 	
 	public any function getValidator(required any target){
 		var obj = javaCast("null","");
-		var type = getSettingsBean().getValidator();		
+		var type = getSettingsBean().getValidator();				
 		
 		// if we find it in the cache
 		if( structKeyExists(getCache(),type) ){

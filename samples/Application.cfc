@@ -27,7 +27,7 @@ component {
 	public void function onRequestStart(){		
 		if(structKeyExists(url,"reload")){
 			onApplicationStart();
-			//ormReload();
+			ormReload();
 		}
 	}
 	
