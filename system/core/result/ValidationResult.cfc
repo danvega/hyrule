@@ -49,7 +49,6 @@ component accessors="true" {
 		error.setProperty(arguments.property.name);
 		error.setType(arguments.type);
 		error.setMessage(getValidationMessage().getMessage(class & "." & arguments.property.name & "." & type,arguments.property));
-		
 		arrayAppend(variables.errors,error);
 	}
 	

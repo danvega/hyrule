@@ -1,4 +1,4 @@
-﻿import hyrule.system.core.Validator.*;
+﻿import hyrule.system.core.ruleParser.*;
 import hyrule.system.core.result.ValidationMessage;
 import hyrule.system.core.constraint.ConstraintFactory;
 import hyrule.system.core.Settings;
@@ -8,50 +8,44 @@ component accessors="true" {
 	property name="cache" type="struct";
 	property name="settingsBean";
 
-	public ValidatorFactory function init(Settings sbean) {
+	public RuleParserFactory function init(Settings sbean) {
 		variables.cache = {};
 		variables.settingsBean = arguments.sbean;
 		return this;
 	}
 	
-	public any function getValidator(required any target){
+	public IRuleParser function getRuleParser(){
 		var obj = javaCast("null","");
-		var type = getSettingsBean().getValidator();				
+		var type = getSettingsBean().getRuleParser();				
 		
 		// if we find it in the cache
 		if( structKeyExists(getCache(),type) ){
 			obj = getCache()[type];
 		} else {
 			// cache it and return it
-			switch(type){
-				case "annotation" : {
-					obj = new AnnotationValidator();
-					break;
-				}				
+			switch(type){			
 				case "metadata" : {
-					obj = new MetadataValidator();
+					obj = new MetadataRuleParser();
 					break;
 				}
 				case "xml" : {
-					obj = new XmlValidator();
+					obj = new XmlRuleParser();
 					break;
 				}
 				case "json" : {
-					obj = new JSONValidator();
+					obj = new JSONRuleParser();
 					break;
 				}				
 				default : {
-					obj = new AnnotationValidator();					
+					obj = new MetadataRuleParser();					
 					break;					
 				}
 			}
 			variables.cache[type] = obj;
 		}		
 		
-		// set the constraint factory in our validator object
+		// set the constraint factory in our parsor object
 		obj.setConstraintFactory( new ConstraintFactory() );		
-		// validataionMessage is a singleton so we need to pass it in
-		obj.setValidationMessage(new ValidationMessage( getSettingsBean() ) );
 		
 		return obj;
 	}

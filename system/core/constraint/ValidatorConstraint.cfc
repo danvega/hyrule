@@ -17,7 +17,7 @@ component extends="AbstractConstraint" accessors="true" {
 	 */
 	property name="validator";
 
-	public SizeConstraint function init(){
+	public ValidatorConstraint function init(){
 		setClazz(this);
 		setConstraintName("VALIDATOR");
 		return this;
@@ -39,15 +39,14 @@ component extends="AbstractConstraint" accessors="true" {
 		var method = listLast(getValidator(),".");
 		var clazz = replaceNoCase(getValidator(),'.' & method,"");
 		var instance = createObject(clazz);
-		var result = evaluate("instance.#method#('#evaluate("target.get#property.name#()")#')");
+		var methodCall = isSimpleValue(arguments.value)? "instance.#method#('#arguments.value#')" : "instance.#method#(#arguments.value#)";
+		var result = evaluate(methodCall);
 
 		if( !isValid("boolean",result) ){
 			throw();
 		} else {
 			return result;
 		}
-
-		return valid;
 	}
 
 }

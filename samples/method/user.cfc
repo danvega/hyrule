@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @output false
  * @accessors true
  */
@@ -7,13 +7,10 @@ component {
 	property numeric userId;
 
 	/**
-	 * @NotEmpty
+	 * @method isNameFullName
 	 */
 	property string firstname;
 
-	/**
-	 * @min 3
-	 */
 	property string lastname;
 
 	/**
@@ -36,6 +33,11 @@ component {
 	 * @Range 1,11
 	 */
 	property string confirmPassword;
+	
+	//if we got a first name we need a last and vice versa
+	boolean function isNameFullName(){
+		return ( isNULL(getFirstName()) && isNULL(getLastName()) ) || ( !isNULL(getFirstName()) && !isNULL(getLastName()) );
+	}
 
 	
 }
