@@ -2,6 +2,7 @@
 	property string propertyName;
 	property string constraintName;
 	property string constraintValue;
+	property string context;
 	
 	
 	ValidationRule function init(){

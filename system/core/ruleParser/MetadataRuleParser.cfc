@@ -43,6 +43,8 @@ component accessors="true" extends="BaseRuleParser" implements="IRuleParser" {
 					vr.setConstraintName(attributeName);
 					vr.setConstraintValue(property[attributeName]);
 					vr.setPropertyName(propertyName);
+					if(structKeyExists(property,"context"))
+						vr.setContext(property.context);
 					ruleSet.addValidationRule(vr);
 				}
 			}		 
@@ -70,10 +72,12 @@ component accessors="true" extends="BaseRuleParser" implements="IRuleParser" {
 			for (propertyConstraintName in propertyConstraints){
 				//if the constraint name isn't recognized skip over it instead of erroring our
 				if(isValidConstraintName(propertyConstraintName)){
-					var validationRule = new hyrule.system.core.rule.ValidationRule();
-					validationRule.setConstraintName(propertyConstraintName);
-					validationRule.setConstraintValue(propertyConstraints[propertyConstraintName]);
-					validationRule.setPropertyName(propertyName);
+					var vr = new hyrule.system.core.rule.ValidationRule();
+					vr.setConstraintName(propertyConstraintName);
+					vr.setConstraintValue(propertyConstraints[propertyConstraintName]);
+					vr.setPropertyName(propertyName);
+					if(structKeyExists(propertyConstraints,"context"))
+						vr.setContext(propertyConstraints.context);					
 					ruleSet.addValidationRule(validationRule);
 				}				
 			}

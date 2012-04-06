@@ -72,7 +72,9 @@ component accessors="true" {
 			var type = targetName & "." & validationRule.getPropertyName() & "." & validationRule.getConstraintName();
 			
 			// if a context is requested and we do not find the property name in the context then skip this contstraint
-			if( arguments.context != "*" && !listFindNoCase(arguments.context,validationRule.getPropertyName()) ) continue;
+			if( arguments.context != "*" 
+				&& !listFindNoCase(arguments.context,validationRule.getPropertyName())
+				&& !listFindNoCase(arguments.context,validationRule.getContext()) ) continue;
 			
 			var propertyValue = evaluate("arguments.target.get#validationRule.getPropertyName()#()");
 			propertyValue = isNULL(propertyValue)? '' : propertyValue;
