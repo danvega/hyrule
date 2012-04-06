@@ -77,24 +77,10 @@ component accessors="true" {
 			var propertyValue = evaluate("arguments.target.get#validationRule.getPropertyName()#()");
 			propertyValue = isNULL(propertyValue)? '' : propertyValue;
 			
-			
-			var rulePassed = true;
-			switch(validationRule.getConstraintName()){
-				case "validator" : {
-						var method = listLast(validationRule.getConstraintValue(),".");
-						var clazz = replaceNoCase(validationRule.getConstraintValue(),'.' & method,"");
-						var instance = createObject(clazz);
-						var methodCall = isSimpleValue(propertyValue)? "instance.#method#('#propertyValue#')" : "instance.#method#(#propertyValue#)";
-						rulePassed = evaluate(methodCall);	
-						break;							
-					}
-				default:  {
-						var constraint = getConstraintFactory().getConstraint(validationRule.getConstraintName());
-						constraint.setConstraintParameter(validationRule.getConstraintValue());
-						rulePassed = constraint.validate(arguments.target,validationRule.getPropertyName(),propertyValue);
-						break;									
-				}					
-			}
+			var constraint = getConstraintFactory().getConstraint(validationRule.getConstraintName());
+			constraint.setConstraintParameter(validationRule.getConstraintValue());
+			rulePassed = constraint.validate(arguments.target,validationRule.getPropertyName(),propertyValue);								
+					
 			if(!rulePassed){
 				//make sure the constraint is set as an attribute on the property 
 				//(validation messaging assumes all constraints exist there
