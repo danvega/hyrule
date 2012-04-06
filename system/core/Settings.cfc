@@ -1,10 +1,10 @@
 ﻿component accessors="true" {
 
 	/**
-	 * The Validator the instance will use
-	 * Valid Choices are annotation,metadata,xml,json
+	 * The ruleParsor the instance will use
+	 * Valid Choices are ruleparser,xml,json
 	 */
-	property name="validator" default="annotation";
+	property name="ruleParser" default="metadata";
 	
 	/**
 	 * I am the path to the resource bundle folder. This folder

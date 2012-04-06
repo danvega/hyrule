@@ -17,6 +17,12 @@ component accessors="true" {
 		return lcase(structKeyList(constraints));	
 	}
 	
+	public any function getConstraint(required string constraintName){
+		if(!StructKeyExists(getConstraints(),arguments.constraintName))
+			throw("constraint name #arguments.constraintName# not available");
+		else return variables.constraints[arguments.constraintName];
+	}
+	
 	/**
 	 * I read the constraints directory and load a collection of constraint objects
 	 * 

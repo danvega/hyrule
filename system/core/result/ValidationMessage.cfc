@@ -16,18 +16,18 @@ component accessors="true" {
 	}
 	
 	public string function getMessage(String fullType,Struct prop){
+
 		var messages = getMessages();
+		
 		var constraint = listGetAt(fullType,listLen(fullType,'.'),'.');
 		var property = listGetAt(fullType,listLen(fullType,'.')-1,'.');
 		var domain = lcase(listGetAt(fullType,listLen(fullType,'.')-2,'.'));
-		var type = domain & '.' & property & '.' & constraint;
-		
+		var type = domain & '.' & property & '.' & constraint;	
 		for(i=1; i <= arrayLen(messages); ++i){
 			if(messages[i].type == type){
 				return messages[i].message;
 			}
 		}
-
 		// isvalid(type) is a special case
 		if( constraint == "isvalid" ){
 			for(i=1; i <= arrayLen(messages); ++i){

@@ -17,7 +17,7 @@ component extends="AbstractConstraint" accessors="true" {
 	 */
 	property name="validator";
 
-	public SizeConstraint function init(){
+	public ValidatorConstraint function init(){
 		setClazz(this);
 		setConstraintName("VALIDATOR");
 		return this;

@@ -17,7 +17,7 @@ component {
 	property string lastname;
 
 	/**
-	 * @hyrule.samples.custom.userService.isValidUsername
+	 * @validator hyrule.samples.custom.userService.isValidUsername
 	 */
 	property string username;
 
