@@ -7,18 +7,21 @@ component {
 	property numeric userId;
 
 	/**
-	 * @NotEmpty
+	 * @Required
+	 *@context userSetup		 
 	 */
 	property string firstname;
 
 	/**
 	 * @min 3
+	*@context userSetup		 
 	 */
 	property string lastname;
 
 	/**
-	 * @validator hyrule.samples.custom.userService.isValidUsername
-	 */
+	* @max 3
+	*@context userSetup	
+	*/
 	property string username;
 
 	/**
@@ -28,12 +31,13 @@ component {
 
 	/**
 	 * @Range 1,11
-	 * @Matches confirmPassword
+	 *@context passwordChange
 	 */
 	property string password;
 
 	/**
 	 * @Range 1,11
+	 *@context passwordChange	 
 	 */
 	property string confirmPassword;
 
