@@ -42,18 +42,23 @@ component accessors="true" {
 	 * @hint Main purpose of the hyrule framework is to validate an object. The rule parsing is
 	 * delegated to the appropriate parser which is created by our parser factory
 	 */
-	public ValidationResult function validate(required any target, string context="*",string locale=""){
+	public ValidationResult function validate(required any target, string context="*",string locale="",string stopOnFirstFail){
 		// determine our resource bundle properties file
 		var rb = getI18N().getResourceBundle(arguments.locale);
 		// set the rb
 		getSettingsBean().setRB(rb);
 
+		if(StructKeyExists(arguments,"stopOnFirstFail") && !listFindNoCase("none,object,property",arguments.stopOnFirstFail))
+			throw('value for stopOnFirstFail not recognized.  Valid values are none, object, and property');
+			
+		local.stopOnFirstFail = StructKeyExists(arguments,"stopOnFirstFail") ? arguments.stopOnFirstFail : getSettingsBean().getStopOnFirstFail();
+		
 		var ruleParser = getRuleParserFactory().getRuleParser();
 		var ruleSet = ruleParser.getValidationRuleSet(target);
-		return validateAgainstRuleSet(target,context,ruleSet);
+		return validateAgainstRuleSet(target,context,ruleSet,local.stopOnFirstFail);
 	}
 
-	private ValidationResult function validateAgainstRuleSet(required any target,required string context, required any ruleSet){
+	private ValidationResult function validateAgainstRuleSet(required any target,required string context, required any ruleSet,required string stopOnFirstFail){
 		var result = new ValidationResult(new ValidationMessage( getSettingsBean() ));
 		var meta = getMetaData(arguments.target);
 		var targetname = meta.Name;
@@ -70,34 +75,37 @@ component accessors="true" {
 
 		for(var validationRule in arguments.ruleset.getValidationRules()){
 
-			// if this property already failed no need to go on
-			if( !result.propertyHasError(validationRule.getPropertyName()) ) {
-				var type = targetName & "." & validationRule.getPropertyName() & "." & validationRule.getConstraintName();
+			// if this property already failed and we are stopping at first property failure skip this iteration 
+			if(result.propertyHasError(validationRule.getPropertyName()) && arguments.stopOnFirstFail == 'property') continue; 
+			
+			var type = targetName & "." & validationRule.getPropertyName() & "." & validationRule.getConstraintName();
 
-				// if a context is requested and we do not find the property name in the context then skip this contstraint
-				if( arguments.context != "*"
-					&& !listFindNoCase(arguments.context,validationRule.getPropertyName())
-					&& !listFindNoCase(arguments.context,validationRule.getContext())) continue;
+			// if a context is requested and we do not find the property name in the context then skip this contstraint
+			if( arguments.context != "*"
+				&& !listFindNoCase(arguments.context,validationRule.getPropertyName())
+				&& !listFindNoCase(arguments.context,validationRule.getContext())) continue;
 
-				var propertyValue = evaluate("arguments.target.get#validationRule.getPropertyName()#()");
-				var constraint = getConstraintFactory().getConstraint(validationRule.getConstraintName());
-				
-				//if the propert value is NULL...ask the constrainst if we should autopass the check
-				
-				if(isNULL(propertyValue)  && constraint.passOnNULL()) continue;
-				
-				constraint.setConstraintParameter(validationRule.getConstraintValue());
-				if(isNULL(propertyValue))
-					rulePassed = constraint.validate(arguments.target,validationRule.getPropertyName());
-				else
-					rulePassed = constraint.validate(arguments.target,validationRule.getPropertyName(),propertyValue);
+			var propertyValue = evaluate("arguments.target.get#validationRule.getPropertyName()#()");
+			var constraint = getConstraintFactory().getConstraint(validationRule.getConstraintName());
+			
+			//if the propert value is NULL...ask the constrainst if we should autopass the check
+			
+			if(isNULL(propertyValue)  && constraint.passOnNULL()) continue;
+			
+			constraint.setConstraintParameter(validationRule.getConstraintValue());
+			if(isNULL(propertyValue))
+				rulePassed = constraint.validate(arguments.target,validationRule.getPropertyName());
+			else
+				rulePassed = constraint.validate(arguments.target,validationRule.getPropertyName(),propertyValue);
 
-				if(!rulePassed){
-					//make sure the constraint is set as an attribute on the property
-					//(validation messaging assumes all constraints exist there
-					properties[validationRule.getPropertyName()][validationRule.getConstraintName()] = validationRule.getConstraintValue();
-					result.addError(targetName,'property',properties[validationRule.getPropertyName()],validationRule.getConstraintName());
-				}
+			if(!rulePassed){
+				//make sure the constraint is set as an attribute on the property
+				//(validation messaging assumes all constraints exist there
+				properties[validationRule.getPropertyName()][validationRule.getConstraintName()] = validationRule.getConstraintValue();
+				result.addError(targetName,'property',properties[validationRule.getPropertyName()],validationRule.getConstraintName());
+				
+				//break out of the loop and stop validation if we are stopping on first object validation failure
+				if(arguments.stopOnFirstFail == 'object') break;
 			}
 		}
 		return result;
