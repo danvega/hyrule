@@ -1,5 +1,5 @@
 ﻿import hyrule.system.core.result.ValidationResult;
-import hyrule.system.core.result.ValidationMessage;
+import hyrule.system.core.result.ValidationMessageProvider;
 import hyrule.system.core.constraint.ConstraintFactory;
 import hyrule.system.core.ruleParser.RuleParserFactory;
 import hyrule.system.core.i18n.i18n;
@@ -42,92 +42,72 @@ component accessors="true" {
 	 * @hint Main purpose of the hyrule framework is to validate an object. The rule parsing is
 	 * delegated to the appropriate parser which is created by our parser factory
 	 */
-	public ValidationResult function validate(required any target, string context="*",string locale=""){
+	public ValidationResult function validate(required any target, string context="*",string locale="",string stopOnFirstFail){
 		// determine our resource bundle properties file
 		var rb = getI18N().getResourceBundle(arguments.locale);
 		// set the rb
 		getSettingsBean().setRB(rb);
 
+		if(StructKeyExists(arguments,"stopOnFirstFail") && !listFindNoCase("none,object,property",arguments.stopOnFirstFail))
+			throw('value for stopOnFirstFail not recognized.  Valid values are none, object, and property');
+			
+		local.stopOnFirstFail = StructKeyExists(arguments,"stopOnFirstFail") ? arguments.stopOnFirstFail : getSettingsBean().getStopOnFirstFail();
+		
 		var ruleParser = getRuleParserFactory().getRuleParser();
 		var ruleSet = ruleParser.getValidationRuleSet(target);
-		return validateAgainstRuleSet(target,context,ruleSet);
+		return validateAgainstRuleSet(target,context,ruleSet,local.stopOnFirstFail);
 	}
 
-	private ValidationResult function validateAgainstRuleSet(required any target,required string context, required any ruleSet){
-		var result = new ValidationResult(new ValidationMessage( getSettingsBean() ));
+	private ValidationResult function validateAgainstRuleSet(required any target,required string context, required any ruleSet,required string stopOnFirstFail){
+		var result = new ValidationResult(new ValidationMessageProvider( getSettingsBean() ));
 		var meta = getMetaData(arguments.target);
 		var targetname = meta.Name;
 		var properties = {};
 
+		//build a map of properties by name for fast lookup later
 		do
 		{
-			for (var x = 1; x <=arraylen(meta.properties); x++) {
-				meta.properties[x]["FAILED"] = false;
+			for (var x = 1; x <=arraylen(meta.properties); x++)
 				properties[meta.properties[x].name] = meta.properties[x];
-			}
-
 			meta = structKeyExists(meta,"extends") ? meta.extends : {};
 		}
 		while(structKeyExists(meta,"properties"));
 
-		// validationRules array needs to be sorted so all required rules come first
-		var sortedRules = _sort(arguments.ruleset.getValidationRules());
+		for(var validationRule in arguments.ruleset.getValidationRules()){
 
-		for(var validationRule in sortedRules){
+			// if this property already failed and we are stopping at first property failure skip this iteration 
+			if(result.propertyHasError(validationRule.getPropertyName()) && arguments.stopOnFirstFail == 'property') continue; 
+			
+			var type = targetName & "." & validationRule.getPropertyName() & "." & validationRule.getConstraintName();
 
-			// if this property already failed no need to go on
-			if( !properties[validationRule.getPropertyName()]["FAILED"] ) {
-				var type = targetName & "." & validationRule.getPropertyName() & "." & validationRule.getConstraintName();
+			// if a context is requested and we do not find the property name in the context then skip this contstraint
+			if( arguments.context != "*"
+				&& !listFindNoCase(arguments.context,validationRule.getPropertyName())
+				&& !listFindNoCase(arguments.context,validationRule.getContext())) continue;
 
-				// if a context is requested and we do not find the property name in the context then skip this contstraint
-				if( arguments.context != "*"
-					&& !listFindNoCase(arguments.context,validationRule.getPropertyName())
-					&& !listFindNoCase(arguments.context,validationRule.getContext())) continue;
-
-				var propertyValue = evaluate("arguments.target.get#validationRule.getPropertyName()#()");
-				propertyValue = isNULL(propertyValue)? '' : propertyValue;
-
-				var constraint = getConstraintFactory().getConstraint(validationRule.getConstraintName());
-				constraint.setConstraintParameter(validationRule.getConstraintValue());
+			var propertyValue = evaluate("arguments.target.get#validationRule.getPropertyName()#()");
+			var constraint = getConstraintFactory().getConstraint(validationRule.getConstraintName());
+			
+			//if the propert value is NULL...ask the constrainst if we should autopass the check
+			
+			if(isNULL(propertyValue)  && constraint.passOnNULL()) continue;
+			
+			constraint.setConstraintParameter(validationRule.getConstraintValue());
+			if(isNULL(propertyValue))
+				rulePassed = constraint.validate(arguments.target,validationRule.getPropertyName());
+			else
 				rulePassed = constraint.validate(arguments.target,validationRule.getPropertyName(),propertyValue);
 
-				if(!rulePassed){
-					//make sure the constraint is set as an attribute on the property
-					//(validation messaging assumes all constraints exist there
-					properties[validationRule.getPropertyName()][validationRule.getConstraintName()] = validationRule.getConstraintValue();
-					result.addError(targetName,'property',properties[validationRule.getPropertyName()],validationRule.getConstraintName());
-
-					// set failed = true for this property
-					properties[validationRule.getPropertyName()]["FAILED"] = true;
-				}
+			if(!rulePassed){
+				//make sure the constraint is set as an attribute on the property
+				//(validation messaging assumes all constraints exist there
+				properties[validationRule.getPropertyName()][validationRule.getConstraintName()] = validationRule.getConstraintValue();
+				result.addError(targetName,'property',properties[validationRule.getPropertyName()],validationRule.getConstraintName());
+				
+				//break out of the loop and stop validation if we are stopping on first object validation failure
+				if(arguments.stopOnFirstFail == 'object') break;
 			}
 		}
 		return result;
 	}
-
-	/**
-	 * @hint I will sort an array of rules. We want all of the required rules first and the rest
-	 */
-	private Array function _sort(Array rules){
-		var result = duplicate(arguments.rules);
-		var size = arrayLen(result);
-
-		/// iterate over the rules
-		for(var x = 1; x <= size; x++){
-			// inner loop compares rule
-			for(var i=1; i <= size - x; i++){
-				var thisConstraint = result[i].getConstraintName();
-				var nextConstraint = result[i+1].getConstraintName();
-
-				if( nextConstraint == 'REQUIRED'){
-					temp = duplicate(result[i]);
-					result[i] = duplicate(result[i + 1]);
-					result[i + 1] = temp;
-				}
-			}
-		}
-
-		return result;
-	}
-
 }

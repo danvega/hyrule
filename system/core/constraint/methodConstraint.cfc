@@ -42,5 +42,10 @@ component extends="AbstractConstraint" accessors="true" {
 			return result;
 		}
 	}
+	
+	//override the base function to inform the validator we don't auto pass the constrainst on NULL values
+	public boolean function passOnNULL(){
+		return false;
+	}		
 
 }

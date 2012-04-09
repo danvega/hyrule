@@ -10,7 +10,7 @@ component accessors="true" {
 	property name="constraintParamater";
 
 	public boolean function validate(any target, any property, any value){
-		return processValidate(target,property,value);
+		return processValidate(argumentCollection = arguments);
 	}
 
 	/**
@@ -72,5 +72,9 @@ component accessors="true" {
 
 	public boolean function isSpecialVar(param){
 		return listFindNoCase("$now",param);
+	}
+	
+	public boolean function passOnNULL(){
+		return true;
 	}
 }
