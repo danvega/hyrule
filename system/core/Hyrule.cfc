@@ -80,11 +80,17 @@ component accessors="true" {
 					&& !listFindNoCase(arguments.context,validationRule.getContext())) continue;
 
 				var propertyValue = evaluate("arguments.target.get#validationRule.getPropertyName()#()");
-				propertyValue = isNULL(propertyValue)? '' : propertyValue;
-
 				var constraint = getConstraintFactory().getConstraint(validationRule.getConstraintName());
+				
+				//if the propert value is NULL...ask the constrainst if we should autopass the check
+				
+				if(isNULL(propertyValue)  && constraint.passOnNULL()) continue;
+				
 				constraint.setConstraintParameter(validationRule.getConstraintValue());
-				rulePassed = constraint.validate(arguments.target,validationRule.getPropertyName(),propertyValue);
+				if(isNULL(propertyValue))
+					rulePassed = constraint.validate(arguments.target,validationRule.getPropertyName());
+				else
+					rulePassed = constraint.validate(arguments.target,validationRule.getPropertyName(),propertyValue);
 
 				if(!rulePassed){
 					//make sure the constraint is set as an attribute on the property
