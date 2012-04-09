@@ -83,36 +83,6 @@
 					<p>Once you have a mapping to the hyrule folder you can create an instance of the main Hyrule component. I like storing this as a singleton in the application scope using the onRequestStart method.</p>
 					<script src="https://gist.github.com/2340959.js?file=gistfile1.txt"></script>
 					
-					<h2>Configuration</h2>
-					<p>When you create an instance of the Hyrule framework you can pass in a struct of configuration options.</p>
-					<table class="table table-striped table-bordered table-condensed">
-						<thead>
-							<tr>
-								<th>Setting</th>
-								<th>Default</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>ruleParser</td>
-								<td>metadata</td>
-								<td>The ruleParsor the instance will use. Valid Choices are metadata,xml,json</td>
-							</tr>
-							<tr>
-								<td>rbPath</td>
-								<td>/hyrule/system/i18n</td>
-								<td>I am the path to the resource bundle folder. This folder contains all properties files. If you do not wish to create your own you can use the default.properties that ships with Hyrule</td>
-							</tr>
-							<tr>
-								<td>rb</td>
-								<td>default</td>
-								<td>The default resouce bundle to use with or without the .properties extention</td>
-							</tr>							
-						</tbody>
-					</table>
-					<script src="https://gist.github.com/2341411.js"> </script>					
-					
 					<h2>Declaring Constraints</h2>
 					
 					<p>There are currently two ways to declare constraints and plans to support others in the future. The easiest way to declare a constraint is to set it at the property level.  You can define a constraint as a property attribute or by using annotations.</p>
@@ -215,46 +185,8 @@
 					</table>
 					
 					<h2>Validating Constraints</h2>
-					<p>To validate an object simply pass your object into Hyrule's validate method. The validate method will return a ValidationResult object. </p>
-					<script src="https://gist.github.com/2341243.js"> </script>
-					
-					<p>The validate method accepts the following arguments.</p>
-					<table class="table table-striped table-bordered table-condensed">
-						<thead>
-							<tr>
-								<td>Argument</td>
-								<td>Type</td>
-								<td>Default</td>
-								<td>Description</td>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>target</td>
-								<td>any</td>
-								<td>--</td>
-								<td>The object to validate</td>
-							</tr>
-							<tr>
-								<td>context</td>
-								<td>string</td>
-								<td>*</td>
-								<td>The list of properties to validate or the name of the context in which to validate.</td>
-							</tr>
-							<tr>
-								<td>locale</td>
-								<td>string</td>
-								<td>empty</td>
-								<td>The name of the properties file with or without the .proprties suffix.</td>
-							</tr>
-						</tbody>
-					</table>
-					
-					<h2>Validating Using Context</h2>
 					
 					<h2>Displaying Errors</h2>
-					
-					<h2>Custom Error Messages</h2>
 					
 					<h2>Custom Validators</h2>
 				</div>
