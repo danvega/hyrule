@@ -1,5 +1,5 @@
 ﻿import hyrule.system.core.result.ValidationError;
-import hyrule.system.core.result.ValidationMessage;
+import hyrule.system.core.result.ValidationMessageProvider;
 
 component accessors="true" {
 
@@ -8,19 +8,16 @@ component accessors="true" {
 	 */
 	property name="errors" type="array" setter="false";
 
-	/**
-	 * The array that contains all errors and provide a getter/setter
-	 */
-	property name="validationMessage";
+	property name="ValidationMessageProvider";
 
 
 	/**
 	 * Constructor initializes our errors array
 	 * return ValidationResult
 	 */ 
-	public validationResult function init(ValidationMessage message){
+	public validationResult function init(ValidationMessageProvider provider){
 		variables.errors = [];
-		setValidationMessage(arguments.message);
+		setValidationMessageProvider(arguments.provider);
 		variables.propertyErrorCache = {};
 		return this;
 	}
@@ -53,7 +50,7 @@ component accessors="true" {
 		error.setLevel(arguments.level);
 		error.setProperty(arguments.property.name);
 		error.setType(arguments.type);
-		error.setMessage(getValidationMessage().getMessage(class & "." & arguments.property.name & "." & type,arguments.property));
+		error.setMessage(getValidationMessageProvider().getMessage(class & "." & arguments.property.name & "." & type,arguments.property));
 		arrayAppend(variables.errors,error);
 		variables.propertyErrorCache[arguments.property.name] = true;
 	}

@@ -8,7 +8,7 @@ component accessors="true" {
 	property name="messages" type="array";
 	property name="settingsBean";
 
-	public ValidationMessage function init(Settings sbean){
+	public ValidationMessageProvider function init(Settings sbean){
 		setSettingsBean(arguments.sbean);
 		setMessages([]);		
 		loadResourceBundle();

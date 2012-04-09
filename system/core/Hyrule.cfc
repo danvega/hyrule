@@ -1,5 +1,5 @@
 ﻿import hyrule.system.core.result.ValidationResult;
-import hyrule.system.core.result.ValidationMessage;
+import hyrule.system.core.result.ValidationMessageProvider;
 import hyrule.system.core.constraint.ConstraintFactory;
 import hyrule.system.core.ruleParser.RuleParserFactory;
 import hyrule.system.core.i18n.i18n;
@@ -59,7 +59,7 @@ component accessors="true" {
 	}
 
 	private ValidationResult function validateAgainstRuleSet(required any target,required string context, required any ruleSet,required string stopOnFirstFail){
-		var result = new ValidationResult(new ValidationMessage( getSettingsBean() ));
+		var result = new ValidationResult(new ValidationMessageProvider( getSettingsBean() ));
 		var meta = getMetaData(arguments.target);
 		var targetname = meta.Name;
 		var properties = {};
