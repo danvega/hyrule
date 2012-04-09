@@ -72,7 +72,6 @@
 								<li><strong>context:</strong> An example of passing a list of properties to validate. This is helpful when you don't want to validate the entire object.</li>
 								<li><strong>context_property:</strong> An example of setting a context name when you only need to validate certain properties.</li>
 								<li><strong>custom:</strong> An example of a custom validator. If the framework is missing a constraint you can create your own.</li>
-								<li><strong>displayname:</strong> An example of how to use the displayName property to customize property names display value</li>								
 								<li><strong>frameworks:</strong> Full featured examples using the frameworks Coldbox,FW/1 and ColdMVC.</li>
 								<li><strong>property:</strong> An example of declaring constraints at the property level.</li>
 								<li><strong>rb:</strong> An example of how to use Internationalization and Localization in your application.</li>
@@ -346,20 +345,15 @@
 					<a name="error-messages"></a>
 					<h2>Error Messages</h2>
 
-					<p>In the last section we looked at how to display our messages but it wasn't quite specific on where these messages came from. Each validation constraint has a built in error message that is defined in the default properties file that is located in /hyrule/system/i18n and looks like this.</p>
-					<script src="https://gist.github.com/2343594.js"> </script>
-					
-					<p>It is important to note that we humanize any property names. If you create your variables in proper camel case form we will create a user friendly version under the hood.</p>
+					<p>In the last section we looked at how to display our messages but it wasn't quite specific on where these messages came from. Each validation constraint has a built in error message that is defined in the default properties file that is located in /hyrule/system/i18n and looks like this. It is also important to note that we humanize any property names. If you create your variables in proper camel case we will create a user friendly version under the hood. </p>
 					<ul>
 						<li>firstName becomes First Name</li>
 						<li>lastName becomes Last Name</li>
 						<li>emailAddress becomes EmailAddress</li>
 						<li>whatYouTalkingAboutWillis becomes What You Talking About Willis</li>						
 					</ul>
-					
-					<p>There are however certain times when humanizing the property name just wont do. Take for instance a user component that has a variable named ssn. When we display the error to the user we want the property to display as Social Security Number. You can use the displayName attribute to override the default property display name. When the required constraint fails the message will read "The field Social Security Number must contain a value."</p>
-					<script src="https://gist.github.com/2347202.js"> </script>
-					
+					<script src="https://gist.github.com/2343594.js"> </script>
+
 					<p>These messages were just meant to give you something out of the box. If you want to create your own custom messages you can.  You can define a whole set of custom messages or just override a single one. First let's look at how to customize the entire set of messages. Instead of using the default resource bundle path and file we can create our own properties file. Simply copy over the default.properties to a location in your project and customize the messages. When you create an instance of Hyrule simply pass in the path to your custom error messages.</p>
 					<script src="https://gist.github.com/2343717.js"> </script>
 
