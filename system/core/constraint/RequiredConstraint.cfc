@@ -36,6 +36,9 @@ component extends="AbstractConstraint" accessors="true" {
 	}
 
 	public boolean function processValidate(any target, any property, any value){
+		if(getRequired() && !StructKeyExists(arguments,"value"))
+			return false;
+			
 		if( isSimpleValue(arguments.value) ) {
 
 			if( getRequired() ) {
@@ -49,5 +52,10 @@ component extends="AbstractConstraint" accessors="true" {
 		}
 		return false;
 	}
+	
+	//override the base function to inform the validator we don't auto pass the constrainst on NULL values
+	public boolean function passOnNULL(){
+		return false;
+	}	
 
 }

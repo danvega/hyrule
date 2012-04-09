@@ -1,5 +1,4 @@
 ﻿import hyrule.system.core.ruleParser.*;
-import hyrule.system.core.result.ValidationMessage;
 import hyrule.system.core.constraint.ConstraintFactory;
 import hyrule.system.core.Settings;
 

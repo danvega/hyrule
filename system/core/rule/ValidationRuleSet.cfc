@@ -8,7 +8,11 @@
 	}
 	
 	void function addValidationRule(validationRule vr){
-		ArrayAppend(variables.validationRules,arguments.vr);
+		//put the required attributes first so they get validated first
+		if(arguments.vr.getConstraintName() == 'Required')
+			ArrayPrepend(variables.validationRules,arguments.vr);
+		else
+			ArrayAppend(variables.validationRules,arguments.vr);
 	}
 	
 }

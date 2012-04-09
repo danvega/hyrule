@@ -17,6 +17,15 @@
 	 * The default resouce bundle to use with or without the .properties extention
 	 */
 	property name="rb" default="default";
+	
+	
+	/**
+	* Determines if and when we continue running validation after a failure
+	* acceptable values are "none" (keep running all validation), 
+	* "object" (stop all validation after one failure) 
+	* or "property" (keep validating other properties on the object but no longer validate the failed property)
+	*/
+	property name="stopOnFirstFail" default="property";
 
 
 	/**
@@ -36,6 +45,15 @@
 		}
 
 		return this;
+	}
+	/**
+	* Override this setter to enforce the valid values
+	*/
+	public void function setStopOnFirstFail(required string setting){
+		if(!listFindNoCase("none,object,property",arguments.setting))
+			throw('Setting for stopOnFirstFail not recognized.  Valid settings are none, object, and property');
+		
+		variables.stopOnFirstFail = arguments.setting;	
 	}
 
 	/**
