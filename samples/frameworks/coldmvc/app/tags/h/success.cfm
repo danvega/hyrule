@@ -10,7 +10,7 @@
 
 	<cfoutput>
 	<cfif success neq "">
-		<div class="alert-message success">
+		<div class="alert alert-success">
 	    	<a class="close" href="##">×</a>
 	   		<p>#escape(params.success)#</p>
 	  	</div>

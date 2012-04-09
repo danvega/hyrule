@@ -15,17 +15,21 @@
 				message="Paramater for constraint max was not a valid type."
 			);
 		}
-		
+
 		setMax(constraintParameter);
 	}
-	
-	public boolean function processValidate(any target, any property, any value){			
-		if( value <=  max){
-			return true;
+
+	public boolean function processValidate(any target, any property, any value){
+
+		if( isNumeric(value) || isValid("date",value) ){
+			return value <= getMax();
+		}  else {
+			return len(value) <= getMax();
 		}
+
 		return false;
 	}
-		
+
 	/**
 	 * override setter to account for special variables
 	 */
@@ -36,7 +40,7 @@
 			variables.max = getSpecialVar(max);
 		}
 	}
-	
+
 	// PRIVATE METHODS
 	private boolean function isValidConstraintParameter(any param){
 		if( isSimpleValue(param) && (isNumeric(param) || isValid("date",param) || isSpecialVar(param)) ){
@@ -44,5 +48,5 @@
 		}
 		return false;
 	}
-	
+
 }

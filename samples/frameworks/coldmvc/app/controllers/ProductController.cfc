@@ -1,11 +1,11 @@
 ﻿/**
  * @accessors true
  * @action list
- * @extends coldmvc.Controller
  */
 component {
 
 	property validationService;
+	property _Product;
 	property _Category;
 
 	function list() {
@@ -20,15 +20,12 @@ component {
 		var product = _Product.get(id);
 
 		if (isPost()) {
-
 			product.populate(params.product);
 
 			var result = validationService.validate(product);
 
 			if (result.hasErrors()) {
-
 				params.errors = result.getErrorMessages();
-
 			} else {
 
 				product.save();

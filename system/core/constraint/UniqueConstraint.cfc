@@ -1,7 +1,7 @@
-/** 
+/**
  * UniqueConstraint
- * 
- * @hint I am used to determine if a value is unique in the database. I am only useful for persisted records and will always 
+ *
+ * @hint I am used to determine if a value is unique in the database. I am only useful for persisted records and will always
  * return true for non persisted components
  */
 component extends="AbstractConstraint" accessors="true" {
@@ -21,23 +21,24 @@ component extends="AbstractConstraint" accessors="true" {
 				message="Paramater for constraint unique was not of type boolean"
 			);
 		}
-		
+
 		setIsUnique(constraintParameter);
 	}
-	
+
 	public boolean function processValidate(any target, any property, any value){
 		var unique = true;
 
 		if( isSimpleValue(arguments.value) ) {
 			if( getIsUnique() ) {
 				var appSettings = application.getApplicationSettings();
-				// the unique constraint uses orm to check a mapped constraint. if this is a non mapped class it wont work
 				var entityName = getEntityName(target);
-								
+				var prop = getPropertyName(target,property);
+
 				// is orm enabled && the target class we are looking at a mapped entity
 				if( (structKeyExists(appSettings,"ormEnabled") && appSettings.ormEnabled) && len(entityName) ){
-					unique = arrayLen(ormExecuteQuery("from #entityName# where #property# = ?",[arguments.value])) == 0;
-				}	
+					var sql = "from " & entityName & " where " & prop & " = ?";
+					unique = arrayLen(ormExecuteQuery(sql,[arguments.value])) == 0;
+				}
 			}
 		}
 		return unique;

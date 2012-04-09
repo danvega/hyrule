@@ -1,16 +1,8 @@
 ﻿component persistent="true" extends="coldmvc.Model" {
 
 	property name="id" column="product_id" fieldtype="id" generator="native";
-
-	/**
-	 * @blank false
-	 */
-	property name="name";
-
-	/**
-	 * @blank false
-	 */
-	property name="description" ormtype="text";
+	property name="name" required="true";
+	property name="description" ormtype="text" required="true";
 
 	/**
 	 * @size 1..-1

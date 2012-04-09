@@ -6,23 +6,24 @@
 component {
 
 	/**
-	 * @blank false
+	 * @Required true
 	 */
 	property string firstName;
 
 	/**
-	 * @blank false
+	 * @Required true
 	 */
 	property string lastName;
 
 	/**
-	 * @blank false
-	 * @hyrule.samples.complete.model.user.userService.isUniqueUsername
+	 * @Required true
+	 * @unique true
 	 */
 	property username;
 
 	/**
-     * @Email
+	 * @Required true
+     * @IsValid email
 	 */
 	property email;
 

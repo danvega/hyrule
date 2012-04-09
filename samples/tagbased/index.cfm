@@ -1,17 +1,8 @@
-<html>
-<head>
-	<title>Tag based example</title>
-</head>
+<cfset user = new User()>
+<cfset user.setFirstName("")>
+<cfset user.setLastName("")>
+<cfset user.setEmail("danv")>
 
-<body>
+<cfset result = application.hyrule.validate(user)>
 
-	<cfset user = new User()>
-	<cfset user.setFirstName("")>
-	<cfset user.setLastName("")>
-
-	<cfset result = application.hyrule.validate(user)>
-
-	<cfdump var="#result.getErrors()#">
-
-</body>
-</html>
+<cfdump var="#result.getErrors()#">

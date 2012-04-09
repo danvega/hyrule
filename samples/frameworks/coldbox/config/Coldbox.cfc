@@ -34,7 +34,7 @@ Optional Methods
 - {environment}() : The name of the environment found and called by the framework.
 
 */
-	
+
 // Configure ColdBox Application
 function configure(){
 
@@ -42,14 +42,14 @@ function configure(){
 	coldbox = {
 		//Application Setup
 		appName 				= "cbhyrule",
-		
+
 		//Development Settings
 		debugMode				= true,
 		debugPassword			= "",
 		reinitPassword			= "",
 		handlersIndexAutoReload = true,
 		configAutoReload		= false,
-		
+
 		//Implicit Events
 		defaultEvent			= "dashboard.index",
 		requestStartHandler		= "",
@@ -59,30 +59,29 @@ function configure(){
 		sessionStartHandler 	= "",
 		sessionEndHandler		= "",
 		missingTemplateHandler	= "",
-		
+
 		//Error/Exception Handling
 		exceptionHandler		= "",
 		onInvalidEvent			= "",
 		customErrorTemplate		= "",
-			
+
 		//Application Aspects
 		handlerCaching 			= false,
 		eventCaching			= false
 	};
-	
+
 	// global settings - if you wanted to you could move these to environment specific settings
 	settings = {
-		validator="annotation",
 		rbPath="/hyrule/samples/frameworks/coldbox/includes/i18n"
 	};
-	
+
 	// environment settings, create a detectEnvironment() method to detect it yourself.
 	// create a function with the name of the environment so it can be executed if that environment is detected
 	// the value of the environment is a list of regex patterns to match the cgi.http_host.
 	environments = {
 		//development = "^cf8.,^railo."
 	};
-	
+
 	// Module Directives
 	modules = {
 		//Turn to false in production
@@ -90,22 +89,22 @@ function configure(){
 		// An array of modules names to load, empty means all of them
 		include = [],
 		// An array of modules names to NOT load, empty means none
-		exclude = [] 
+		exclude = []
 	};
-	
+
 	//WireBox Integration
-	wireBox = { 
+	wireBox = {
 		enabled = true,
-		//binder="config.WireBox", 
-		singletonReload=true 
+		//binder="config.WireBox",
+		singletonReload=true
 	};
-	
+
 
 	//Layout Settings
 	layoutSettings = {
 		defaultLayout = "Layout.Main.cfm"
 	};
-	
+
 	//Register interceptors as an array, we need order
 	interceptors = [
 		 //Autowire
@@ -113,8 +112,8 @@ function configure(){
 		 //SES
 		 {class="coldbox.system.interceptors.SES"}
 	];
-	
+
 }
-	
+
 </cfscript>
 </cfcomponent>

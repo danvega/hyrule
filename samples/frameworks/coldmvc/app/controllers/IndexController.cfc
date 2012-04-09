@@ -1,5 +1,5 @@
 ﻿/**
- * @extends coldmvc.Controller
+ *
  */
 component {
 

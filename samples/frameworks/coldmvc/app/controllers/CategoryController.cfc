@@ -1,16 +1,13 @@
 ﻿/**
  * @accessors true
- * @action list
- * @extends coldmvc.Controller
  */
 component {
 
+	property _Category;
 	property validationService;
 
 	function list() {
-
 		params.categories = _Category.list();
-
 	}
 
 	function edit() {

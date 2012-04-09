@@ -1,7 +1,7 @@
 ﻿<cfoutput>
 <h3>Categories</h3>
 <h:success />
-<table class="zebra-striped">
+<table class="table table-striped table-bordered table-condensed">
 	<thead>
 		<tr>
 			<th>Id</th>

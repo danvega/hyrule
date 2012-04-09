@@ -1,6 +1,7 @@
 <cfcomponent output="false" accessors="true">
-	
-	<cfproperty name="firstname" display="First Name" blank="false">
-	<cfproperty name="lastname" display="Last Name" blank="false">
-	
+
+	<cfproperty name="firstname" required="true">
+	<cfproperty name="lastname" required="true">
+	<cfproperty name="email" required="true" isvalid="email">
+
 </cfcomponent>

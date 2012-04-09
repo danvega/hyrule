@@ -8,15 +8,13 @@ Change Language
 
 <br/><br/>
 
-<!--- define our settings for this instance of hyrule --->
-<cfset config = {validator="annotation",rbPath="/hyrule/samples/rb/i18n"}>
 <!--- get a new instance with our configuration settings --->
-<cfset hyrule = new hyrule.system.core.hyrule(config)>
+<cfset hyrule = new hyrule.system.core.hyrule({rbpath="/hyrule/samples/rb/i18n"})>
 
 <cfset person = new Person()>
 <cfset person.setFirstName("")>
 <cfset person.setLastName("")>
-<cfset person.setAge("abc")>
+<cfset person.setAge(0)>
 
 <cfset result = hyrule.validate(target=person,locale=url.rb)>
 

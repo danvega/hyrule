@@ -10,7 +10,7 @@
 
 	<cfoutput>
 	<cfif isArray(errors) and arrayLen(errors) gt 0>
-		<div class="alert-message block-message error">
+		<div class="alert alert-error">
 			<a class="close" href="##">x</a>
 			<ul>
 				<c:each in="#errors#" do="error">

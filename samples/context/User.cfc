@@ -7,28 +7,30 @@ component {
 	property numeric userId;
 
 	/**
-	 * @NotEmpty
+	 * @Required true
 	 */
 	property string firstname;
 
 	/**
-	 * @min 3
+	 * @Required true
 	 */
 	property string lastname;
 
 	/**
-	* @max 3
-	*/
+	 * @Required true
+	 */
 	property string username;
 
 	/**
-	 * @Email
+	 * @Required true
+	 * @IsValid email
 	 */
 	property string email;
 
 	/**
 	 * @Range 1,11
-	 * @Matches confirmPassword
+	 * @SameAs confirmPassword
+	 *
 	 */
 	property string password;
 
@@ -37,5 +39,5 @@ component {
 	 */
 	property string confirmPassword;
 
-	
+
 }

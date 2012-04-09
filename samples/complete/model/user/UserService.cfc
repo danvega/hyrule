@@ -11,17 +11,6 @@ component {
 		return q.recordCount == 1;
 	}
 
-	public boolean function isUniqueUsername(String username){
-		var valid = true;
-
-		// database lookup to see if its valid. returns true if username is found
-		if( getByUsername(arguments.username) ){
-			valid = false;
-		}
-
-		return valid;
-	}
-
 	public void function save(User user){
 		// save the user
 	}

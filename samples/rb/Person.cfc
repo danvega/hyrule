@@ -1,19 +1,10 @@
 ﻿component accessors="true" {
 
-	/** 
-	 * @blank false
-	 */
-	property firstName;
+	property name="firstname" type="string" required="true";
+	property name="lastname" type="string" required="true";
+	property name="age" type="numeric" required="true" min="18";
 
-	/** 
-	 * @blank false
-	 */
-	property lastName;
-
-	/** 
-	 * @Numeric
-	 */
-	property age;
-	
-	
+	public Person function init(){
+		return this;
+	}
 }
