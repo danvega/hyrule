@@ -9,12 +9,10 @@ body {
 }
 h1 {
 	border-bottom:1px solid #eee;
+	margin: 20px 0px;
 }
 h2 {
 	margin: 20px 0px;
-}
-#header {
-	padding:10px 0 0 0;
 }
 .container {
 
@@ -42,4 +40,9 @@ h2 {
 
 form {
 	margin-top:20px;
+}
+
+.warning {
+	color:red;
+	font-weight:bold;
 }

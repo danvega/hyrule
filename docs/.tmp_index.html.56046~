@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hyrule Docs</title>
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/stylesheet.css" type="text/css" rel="stylesheet" >
+
+</head>
+<body>
+	
+	<div class="container">
+
+		<div class="content">
+
+			<div class="row">
+				<div id="header" class="span12">
+					<h1>Hyrule Documentation</h1>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="span12">
+					
+					<h2>About</h2>
+					<p>Hyrule is a validation framework for ColdFusion. Contrary to what people think is not just for ORM (Hibernate) based applications. The Hyrule framework will work with ColdFusion 9+ applications that use a model driven behavior for business objects. All this means is that use a class (component) to describe your objects such as user, person or employee.</p>
+					<p>This framework gives you multiple ways to declare your validation rules or as the framework refers to them, constraints. Once you have defined your constraints you can pass in an object to the framework and it will let you know if it passes validation.</p>
+					<p>This framework was created because there was a real need for it. When I started building most of my applications in a model driven form it became clear that this was something I needed.  My inspiration was and still is the <a href="http://www.hibernate.org/subprojects/validator.html" target="_blank">Hibernate Validator</a> project from the Java community.  This project also wouldn't be where it is today without the help of some amazing people. In no particular order they are:</p>
+					<ul>
+						<li>Aaron Greenlee</li>
+						<li>Lance Staples</li>
+						<li>Tony Nelson</li>
+						<li>Luis Majano</li>
+					</ul>
+					
+					<h2>Requirements</h2>
+					<ul>
+						<li>ColdFusion 9</li>
+					</ul>
+					
+					<h2>Installation</h2>
+					<p>The easiest way to get started is to drop the entire Hyrule folder into your web root. If you can't do this you also have the option of dropping it anywhere on your server and creating a /hyrule mapping that points to that folder.  When you open you the folder you should see the following directory structure.</p> 
+					<ul>
+						<li><strong>Docs:</strong> This folder contains all documentation created for Hyrule.</li>
+						<li>
+							<strong>Samples:</strong> This folder contains samples that allow you to browse the features of the framework and see source code examples.
+							<ul>
+								<li><strong>annotation:</strong> An example of how to declare your constraints using property annotations.</li>
+								<li><strong>basicorm:</strong> How to use the framework in a basic ORM enabled application.</li>
+								<li><strong>complete:</strong> A single template that displays a form. When you save the form the object is validated and if errors exist they are displayed to the user.</li>
+								<li><strong>constraints:</strong> An example of declaring constraints using the constraints struct. It also shows off an example of inhertance with this approach.</li>
+								<li><strong>context:</strong> An example of passing a list of properties to validate. This is helpful when you don't want to validate the entire object.</li>
+								<li><strong>context_property:</strong> An example of setting a context name when you only need to validate certain properties.</li>
+								<li><strong>custom:</strong> An example of a custom validator. If the framework is missing a constraint you can create your own.</li>
+								<li><strong>frameworks:</strong> Full featured examples using the frameworks Coldbox,FW/1 and ColdMVC.</li>
+								<li><strong>property:</strong> An example of declaring constraints at the property level.</li>
+								<li><strong>rb:</strong> An example of how to use Internationalization and Localization in your application.</li>
+								<li><strong>tagbased:</strong> An example that shows declaring constraints in tag based components.</li>								
+							</ul>
+						</li>			
+						<li>
+							<strong>System:</strong> This folder contains the core framework code and should not be modified.
+							<ul>
+								<li>
+									<strong>core</strong>
+									<ul>
+										<li><strong>constraint:</strong> The validation constraints</li>
+										<li><strong>i18n:</strong> Internationalization and localization component.</li>
+										<li><strong>result:</strong> The result object is what is passed back during validation.</li>
+										<li><strong>rule:</strong> Rule and rule set logic</li>
+										<li><strong>ruleParser:</strong> The different rule parsers</li>
+										<li><strong>Hyrule.cfc</strong> The frameworks main component</li>
+										<li><strong>Settings.cfc</strong> The frameworks settings handler</li>
+									</ul>
+								</li>
+								<li><strong>i18n</strong> Contains the default properties file for displaying error messages.</li>
+								<li><strong>tags</strong> Not being used at this time</li>
+							</ul>	
+						</li>
+						<li><strong>Test:</strong>  This folder contains all of the MxUnit test cases for the frameworks constraints.</li>
+					</ul>
+					
+					<p>Once you have a mapping to the hyrule folder you can create an instance of the main Hyrule component. I like storing this as a singleton in the application scope using the onRequestStart method.</p>
+					<script src="https://gist.github.com/2340959.js?file=gistfile1.txt"></script>
+					
+					<h2>Configuration</h2>
+					<p>When you create an instance of the Hyrule framework you can pass in a struct of configuration options.</p>
+					<table class="table table-striped table-bordered table-condensed">
+						<thead>
+							<tr>
+								<th>Setting</th>
+								<th>Default</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>ruleParser</td>
+								<td>metadata</td>
+								<td>The ruleParsor the instance will use. Valid Choices are metadata,xml,json</td>
+							</tr>
+							<tr>
+								<td>rbPath</td>
+								<td>/hyrule/system/i18n</td>
+								<td>I am the path to the resource bundle folder. This folder contains all properties files. If you do not wish to create your own you can use the default.properties that ships with Hyrule</td>
+							</tr>
+							<tr>
+								<td>rb</td>
+								<td>default</td>
+								<td>The default resouce bundle to use with or without the .properties extention</td>
+							</tr>							
+						</tbody>
+					</table>
+					<script src="https://gist.github.com/2341411.js"> </script>					
+					
+					<h2>Declaring Constraints</h2>
+					
+					<p>There are currently two ways to declare constraints and plans to support others in the future. The easiest way to declare a constraint is to set it at the property level.  You can define a constraint as a property attribute or by using annotations.</p>
+					<script src="https://gist.github.com/2341047.js"></script>
+					
+					<p>You can also set it right at the property level. Both ways are essential the same as they add meta data to the property.</p>
+					<script src="https://gist.github.com/2341052.js"></script>
+					
+					<p>You can also declare constraints using a constraints struct stored in the this scope of an object.</p>
+					<script src="https://gist.github.com/2341086.js"> </script>
+					
+					<h2>Constraints</h2>
+					<p>Below is a reference table of all valid constraints. I would like to thank the <a href="http://www.coldbox.org">Coldbox</a> team for the descriptions of some of these connstraints.</p>
+					
+					<table class="table table-striped table-bordered table-condensed">
+						<thead>
+							<tr>
+								<th>Constraint</th>
+								<th>Type</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Required</td>
+								<td>Boolean</td>
+								<td>Whether the property must have a non-null value</td>
+							</tr>
+							<tr>
+								<td>IsValid</td>
+								<td>String</td>
+								<td>Validates that the value is of a certain format type. Our included types are: <br/>ssn,email,url,alpha,boolean,date,usdate,eurodate,numeric,GUID,UUID,integer,string,telephone,zipcode,ipaddress,creditcard,binary,<br/>component,query,struct,json,xml</td>
+							</tr>
+							<tr>
+								<td>Size</td>
+								<td>Numeric or Range</td>
+								<td>The size or length of the value which can be a struct, string, array, or query. The value can be a single numeric value or our cool ranges. <br/>Ex: size=4, size=6..8, size=-5..0</td>
+							</tr>
+							<tr>
+								<td>Range</td>
+								<td>Range</td>
+								<td>Range is a range of values the property value should exist in. Ex: range=1..10, range=6..8</td>
+							</tr>
+							<tr>
+								<td>Regex</td>
+								<td>Regular Expression</td>
+								<td>The regular expression to try and match the value with for validation. This is a no case regex check.</td>
+							</tr>
+							<tr>
+								<td>SameAs</td>
+								<td>Property Name</td>
+								<td>Makes sure the value of the constraint is the same as the value of another property in the object. This is a case sensitive check.</td>
+							</tr>
+							<tr>
+								<td>SameAsNoCase</td>
+								<td>Property Name</td>
+								<td>Makes sure the value of the constraint is the same as the value of another property in the object with no case sensitivity.</td>
+							</tr>
+							<tr>
+								<td>InList</td>
+								<td>List</td>
+								<td>A list of values that the property value must exist in</td>
+							</tr>
+							<tr>
+								<td>Discrete</td>
+								<td>String</td>
+								<td>Do discrete math in the property value. The valid values are: eq,neq,lt,lte,gt,gte. Example: discrete="eq:4" or discrete="lte:10"</td>
+							</tr>
+							<tr>
+								<td>Method</td>
+								<td>Method Name</td>
+								<td>The name of a method to call in the target object for validation. The function must return boolean.</td>
+							</tr>
+							<tr>
+								<td>Min</td>
+								<td>Numeric</td>
+								<td>The value must be greater than or equal to this minimum value</td>
+							</tr>
+							<tr>
+								<td>Max</td>
+								<td>Numeric</td>
+								<td>The value must be less than or equal to this maximum value</td>
+							</tr>
+							<tr>
+								<td>Validator</td>
+								<td>Instantiation Path</td>
+								<td>You can also build your own validators instead of our internal ones. This value will be the instantiation path to the validator and method.<br/> Example: validator="com.user.UserService.isUsernameCool". com.user.UserService is the path to the component and isUsernameCool <br/>is the method that will return a boolean.</td>
+							</tr>
+							<tr>
+								<td>Numeric</td>
+								<td>Any</td>
+								<td>Whether the value is a numeric value. This constraint uses the built in function isNumeric under the hood.</td>
+							</tr>
+							<tr>
+								<td>Unique</td>
+								<td>Boolean</td>
+								<td>I will determine if the value already exists in the database. This constraint works with ORM to determine if the property value is a duplicate.</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h2>Validating Constraints</h2>
+					<p>To validate an object simply pass your object into Hyrule's validate method. The validate method will return a ValidationResult object. </p>
+					<script src="https://gist.github.com/2341243.js"> </script>
+					
+					<p>The validate method accepts the following arguments.</p>
+					<table class="table table-striped table-bordered table-condensed">
+						<thead>
+							<tr>
+								<td>Argument</td>
+								<td>Type</td>
+								<td>Default</td>
+								<td>Description</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>target</td>
+								<td>any</td>
+								<td>--</td>
+								<td>The object to validate</td>
+							</tr>
+							<tr>
+								<td>context</td>
+								<td>string</td>
+								<td>*</td>
+								<td>The list of properties to validate or the name of the context in which to validate.</td>
+							</tr>
+							<tr>
+								<td>locale</td>
+								<td>string</td>
+								<td>empty</td>
+								<td>The name of the properties file with or without the .proprties suffix.</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<h2>Validating Using Context</h2>
+					
+					<h2>Displaying Errors</h2>
+					
+					<h2>Custom Error Messages</h2>
+					
+					<h2>Custom Validators</h2>
+				</div>
+			</div>
+
+		</div>
+
+	</div>	
+	
+</body>
+</html>
