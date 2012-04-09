@@ -63,8 +63,9 @@ component accessors="true" {
 		if( arrayLen(matches) ) {			
 			for(var i=1; i<=arrayLen(matches); ++i){
 				// are we replace the {property} or some special key {min},{max},{matches}
-				if( matches[i] == '{property}'){					
-					m = replaceNoCase(m,matches[i],humanize(arguments.prop.name),"all");				
+				if( matches[i] == '{property}'){
+					var replacementValue = structkeyExists(arguments.prop,"displayName") ? arguments.prop.displayName : humanize(arguments.prop.name);					
+					m = replaceNoCase(m,matches[i],replacementValue,"all");				
 				} else {
 					var _key = replace(matches[i],"{","");
 						_key = replace(_key,"}","");
