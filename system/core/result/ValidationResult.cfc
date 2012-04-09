@@ -6,7 +6,7 @@ component accessors="true" {
 	/**
 	 * The array that contains all errors and provide a getter/setter
 	 */
-	property name="errors" type="array";
+	property name="errors" type="array" setter="false";
 
 	/**
 	 * The array that contains all errors and provide a getter/setter
@@ -19,8 +19,9 @@ component accessors="true" {
 	 * return ValidationResult
 	 */ 
 	public validationResult function init(ValidationMessage message){
-		setErrors([]);
+		variables.errors = [];
 		setValidationMessage(arguments.message);
+		variables.propertyErrorCache = {};
 		return this;
 	}
 	
@@ -30,6 +31,10 @@ component accessors="true" {
 	 */
 	public boolean function hasErrors() {
 		return (arrayLen(getErrors()) > 0); 
+	}
+	
+	public boolean function propertyHasError(required string propertyName){
+		return StructKeyExists(variables.propertyErrorCache,arguments.propertyName);
 	}
 	
 	/** 
@@ -50,6 +55,7 @@ component accessors="true" {
 		error.setType(arguments.type);
 		error.setMessage(getValidationMessage().getMessage(class & "." & arguments.property.name & "." & type,arguments.property));
 		arrayAppend(variables.errors,error);
+		variables.propertyErrorCache[arguments.property.name] = true;
 	}
 	
 	/**

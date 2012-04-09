@@ -59,24 +59,19 @@ component accessors="true" {
 		var targetname = meta.Name;
 		var properties = {};
 
+		//build a map of properties by name for fast lookup later
 		do
 		{
-			for (var x = 1; x <=arraylen(meta.properties); x++) {
-				meta.properties[x]["FAILED"] = false;
+			for (var x = 1; x <=arraylen(meta.properties); x++)
 				properties[meta.properties[x].name] = meta.properties[x];
-			}
-
 			meta = structKeyExists(meta,"extends") ? meta.extends : {};
 		}
 		while(structKeyExists(meta,"properties"));
 
-		// validationRules array needs to be sorted so all required rules come first
-		var sortedRules = _sort(arguments.ruleset.getValidationRules());
-
-		for(var validationRule in sortedRules){
+		for(var validationRule in arguments.ruleset.getValidationRules()){
 
 			// if this property already failed no need to go on
-			if( !properties[validationRule.getPropertyName()]["FAILED"] ) {
+			if( !result.propertyHasError(validationRule.getPropertyName()) ) {
 				var type = targetName & "." & validationRule.getPropertyName() & "." & validationRule.getConstraintName();
 
 				// if a context is requested and we do not find the property name in the context then skip this contstraint
@@ -96,38 +91,9 @@ component accessors="true" {
 					//(validation messaging assumes all constraints exist there
 					properties[validationRule.getPropertyName()][validationRule.getConstraintName()] = validationRule.getConstraintValue();
 					result.addError(targetName,'property',properties[validationRule.getPropertyName()],validationRule.getConstraintName());
-
-					// set failed = true for this property
-					properties[validationRule.getPropertyName()]["FAILED"] = true;
 				}
 			}
 		}
 		return result;
 	}
-
-	/**
-	 * @hint I will sort an array of rules. We want all of the required rules first and the rest
-	 */
-	private Array function _sort(Array rules){
-		var result = duplicate(arguments.rules);
-		var size = arrayLen(result);
-
-		/// iterate over the rules
-		for(var x = 1; x <= size; x++){
-			// inner loop compares rule
-			for(var i=1; i <= size - x; i++){
-				var thisConstraint = result[i].getConstraintName();
-				var nextConstraint = result[i+1].getConstraintName();
-
-				if( nextConstraint == 'REQUIRED'){
-					temp = duplicate(result[i]);
-					result[i] = duplicate(result[i + 1]);
-					result[i + 1] = temp;
-				}
-			}
-		}
-
-		return result;
-	}
-
 }
