@@ -32,6 +32,8 @@ component accessors="true" {
 		if( structKeyExists(meta,"persistent") && meta.persistent ){
 			if(structKeyExists(meta,"entity")){
 				entity = meta.entity;
+			} else if(structKeyExists(meta,"entityName")){
+				entity = meta.entityName;
 			} else {
 				if(structKeyExists(meta,"fullname")){
 					entity = listLast(meta.fullname,".");
