@@ -67,7 +67,7 @@ component extends="AbstractConstraint" accessors="true" {
 	}
 	
 	public boolean function processValidate(any target, any property, any value){
-		return isValid(getType(),value);
+		return IIf( len( trim( arguments.value ) ) gt 0, "isValid(getType(),value)", DE("TRUE") ); // only validate if value exists else return true
 	}
 
 }
