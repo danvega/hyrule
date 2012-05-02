@@ -67,7 +67,15 @@ component extends="AbstractConstraint" accessors="true" {
 	}
 	
 	public boolean function processValidate(any target, any property, any value){
-		return isValid(getType(),value);
+		
+		if( isSimpleValue(arguments.value) ) {
+			// if it is a simple value we can checck to make sure there is length
+			return (len(trim(arguments.value)) > 0) ? isValid(getType(),value) : true;
+		} else {
+			// else we will rely on the isvalid method to determine if the value passed is of type
+			return isValid(getType(),value);	
+		}
+		
 	}
 
 }
