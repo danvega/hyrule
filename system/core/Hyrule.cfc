@@ -84,7 +84,7 @@ component accessors="true" {
 			// if a context is requested and we do not find the property name in the context then skip this contstraint
 			if( arguments.context != "*"
 				&& !listFindNoCase(arguments.context,validationRule.getPropertyName())
-				&& !listFindNoCase(validationRule.getContext(),arguments.context)) continue;
+				&& !intersects(arguments.context,validationRule.getContext())) continue;
 
 			var propertyValue = evaluate("arguments.target.get#validationRule.getPropertyName()#()");
 			var constraint = getConstraintFactory().getConstraint(validationRule.getConstraintName());
@@ -111,4 +111,14 @@ component accessors="true" {
 		}
 		return result;
 	}
+	
+	private boolean function intersects(required string list1, required string list2){
+		for( var i = 1; i <= listlen(arguments.list1); i++){		
+			var val = listgetAt(arguments.list1,i);
+			if(listFindNocase(arguments.list2,val)) { return true; }
+		}
+		return false;
+	}
+
+	
 }
