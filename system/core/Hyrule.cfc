@@ -61,6 +61,7 @@ component accessors="true" {
 	private ValidationResult function validateAgainstRuleSet(required any target,required string context, required any ruleSet,required string stopOnFirstFail){
 		var result = new ValidationResult(new ValidationMessageProvider( getSettingsBean() ));
 		var meta = getMetaData(arguments.target);
+		var targetname = meta.Name;
 		var properties = {};
 
 		//build a map of properties by name for fast lookup later
