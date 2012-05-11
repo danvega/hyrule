@@ -6,6 +6,12 @@ component extends="mxunit.framework.TestCase" {
 		isValidConstraint = new IsValidConstraint();
 		user = new model.user();
 	}
+	
+	// if someone passes a blank value validation for any type should pass
+	public void function testBlankReturnsTrue(){
+		isValidConstraint.setConstraintParameter("email");
+		assertTrue(isValidConstraint.validate(user,"email",""));
+	}
 
 	// IsValid any
 	public void function testAnyReturnsTrue(){

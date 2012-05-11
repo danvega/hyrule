@@ -61,14 +61,15 @@ component accessors="true" {
 	private ValidationResult function validateAgainstRuleSet(required any target,required string context, required any ruleSet,required string stopOnFirstFail){
 		var result = new ValidationResult(new ValidationMessageProvider( getSettingsBean() ));
 		var meta = getMetaData(arguments.target);
-		var targetname = meta.Name;
 		var properties = {};
 
 		//build a map of properties by name for fast lookup later
 		do
 		{
-			for (var x = 1; x <=arraylen(meta.properties); x++)
+			for (var x = 1; x <=arraylen(meta.properties); x++){
 				properties[meta.properties[x].name] = meta.properties[x];
+				properties[meta.properties[x].name].className = meta.Name;
+			}
 			meta = structKeyExists(meta,"extends") ? meta.extends : {};
 		}
 		while(structKeyExists(meta,"properties"));
@@ -77,8 +78,6 @@ component accessors="true" {
 
 			// if this property already failed and we are stopping at first property failure skip this iteration 
 			if(result.propertyHasError(validationRule.getPropertyName()) && arguments.stopOnFirstFail == 'property') continue; 
-			
-			var type = targetName & "." & validationRule.getPropertyName() & "." & validationRule.getConstraintName();
 
 			// if a context is requested and we do not find the property name in the context then skip this contstraint
 			if( arguments.context != "*"
@@ -102,7 +101,7 @@ component accessors="true" {
 				//make sure the constraint is set as an attribute on the property
 				//(validation messaging assumes all constraints exist there
 				properties[validationRule.getPropertyName()][validationRule.getConstraintName()] = validationRule.getConstraintValue();
-				result.addError(targetName,'property',properties[validationRule.getPropertyName()],validationRule.getConstraintName());
+				result.addError(properties[validationRule.getPropertyName()].className,'property',properties[validationRule.getPropertyName()],validationRule.getConstraintName());
 				
 				//break out of the loop and stop validation if we are stopping on first object validation failure
 				if(arguments.stopOnFirstFail == 'object') break;
