@@ -36,8 +36,18 @@ component extends="AbstractConstraint" accessors="true" {
 
 				// is orm enabled && the target class we are looking at a mapped entity
 				if( (structKeyExists(appSettings,"ormEnabled") && appSettings.ormEnabled) && len(entityName) ){
-					var sql = "from " & entityName & " where " & prop & " = ?";
-					unique = arrayLen(ormExecuteQuery(sql,[arguments.value])) == 0;
+					// the property with a fieldtype of id
+					var id = getFieldTypeId(arguments.target);
+					var identity = evaluate( "arguments.target.get#id#()" );
+					
+					if( isNull( identity ) ){
+						var sql = "from " & entityName & " where " & prop & " = ?";
+						unique = arrayLen(ormExecuteQuery(sql,[arguments.value])) == 0;							
+					} else {
+						var sql = "from " & entityName & " where " & prop & " = ? " & " and #id# != ?";
+						unique = arrayLen(ormExecuteQuery(sql,[arguments.value,identity])) == 0;			
+					}
+					
 				}
 			}
 		}

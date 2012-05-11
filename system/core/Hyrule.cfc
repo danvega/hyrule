@@ -79,11 +79,11 @@ component accessors="true" {
 			if(result.propertyHasError(validationRule.getPropertyName()) && arguments.stopOnFirstFail == 'property') continue; 
 			
 			var type = targetName & "." & validationRule.getPropertyName() & "." & validationRule.getConstraintName();
-
+	
 			// if a context is requested and we do not find the property name in the context then skip this contstraint
 			if( arguments.context != "*"
 				&& !listFindNoCase(arguments.context,validationRule.getPropertyName())
-				&& !listFindNoCase(arguments.context,validationRule.getContext())) continue;
+				&& !listFindNoCase(validationRule.getContext(),arguments.context)) continue;
 
 			var propertyValue = evaluate("arguments.target.get#validationRule.getPropertyName()#()");
 			var constraint = getConstraintFactory().getConstraint(validationRule.getConstraintName());

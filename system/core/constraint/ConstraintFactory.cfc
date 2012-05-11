@@ -34,7 +34,7 @@ component accessors="true" {
 		// read this directory and get a list of constraints
 		var dir = getDirectoryFromPath(getCurrentTemplatePath());		
 		// for each constraint instantiate the class and set it in the constraints collection
-		var components = directoryList(dir);
+		var components = directoryList(dir,false,"name","*.cfc");
 
 		// remove exclusions
 		for(var x=1; x<=arrayLen(components); ++x){
