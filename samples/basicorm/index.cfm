@@ -7,9 +7,6 @@
 
 <cfset result = hyrule.validate(emp)>
 
-<cfdump var="#result.getErrors()#">
-<cfabort>
-
 <!--- if there are errors display them, else save the record --->
 <cfif result.hasErrors()>
 	<cfdump var="#result.getErrors()#">

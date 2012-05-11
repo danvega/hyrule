@@ -79,4 +79,21 @@ component accessors="true" {
 	public boolean function passOnNULL(){
 		return true;
 	}
+	
+	/** 
+	 * I will return the id of an entity
+	 */
+	public any function getFieldTypeId(any entity){
+		var meta = getMetaData(arguments.entity);
+		var id = 0;
+		
+		for( var x=1; x <= arrayLen(meta.properties); x++){
+			if( structKeyExists(meta.properties[x],"fieldtype") &&  meta.properties[x].fieldtype == "id"){
+				id = meta.properties[x].name;
+				break;
+			}
+		}
+		
+		return id;
+	}	
 }
