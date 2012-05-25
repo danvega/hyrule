@@ -1,16 +1,6 @@
-<html>
-<head>
-	<title>Advanced example</title>
-</head>
+<cfset user = new User()>
+<cfset user.setUsername("dvega")>
 
-<body>
+<cfset result = application.hyrule.validate(user,"username")>
 
-	<cfset user = new User()>
-	<cfset user.setUsername("dvega")>
-	
-	<cfset result = application.hyrule.validate(user,"username")>
-
-	<cfdump var="#result.getErrors()#">
-
-</body>
-</html>
+<cfdump var="#result.getErrors()#">

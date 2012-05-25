@@ -61,6 +61,7 @@ component accessors="true" {
 	private ValidationResult function validateAgainstRuleSet(required any target,required string context, required any ruleSet,required string stopOnFirstFail){
 		var result = new ValidationResult(new ValidationMessageProvider( getSettingsBean() ));
 		var meta = getMetaData(arguments.target);
+		var targetname = meta.Name;
 		var properties = {};
 
 		//build a map of properties by name for fast lookup later
@@ -84,7 +85,7 @@ component accessors="true" {
 			// if a context is requested and we do not find the property name in the context then skip this contstraint
 			if( arguments.context != "*"
 				&& !listFindNoCase(arguments.context,validationRule.getPropertyName())
-				&& !intersects(arguments.context,validationRule.getContext())) continue;
+				&& !intersects(arguments.context,( isNull(validationRule.getContext()) ? "" : validationRule.getContext() ))) continue;
 
 			var propertyValue = evaluate("arguments.target.get#validationRule.getPropertyName()#()");
 			var constraint = getConstraintFactory().getConstraint(validationRule.getConstraintName());

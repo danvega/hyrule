@@ -22,22 +22,31 @@ component accessors="true" {
 		var constraint = listGetAt(fullType,listLen(fullType,'.'),'.');
 		var property = listGetAt(fullType,listLen(fullType,'.')-1,'.');
 		var domain = lcase(listGetAt(fullType,listLen(fullType,'.')-2,'.'));
-		var type = domain & '.' & property & '.' & constraint;	
-		for(i=1; i <= arrayLen(messages); ++i){
+		var type = domain & '.' & property & '.' & constraint;
+		
+		for(var i=1; i <= arrayLen(messages); ++i){
 			if(messages[i].type == type){
 				return messages[i].message;
 			}
 		}
+		
 		// isvalid(type) is a special case
 		if( constraint == "isvalid" ){
-			for(i=1; i <= arrayLen(messages); ++i){
+			for(var i=1; i <= arrayLen(messages); ++i){
 				if(messages[i].type == "type." & prop.isvalid){
 					return replaceTemplateText(messages[i].message,prop);
 				}
 			}
 		}		
+		/*
+		for(key in prop){
+			if(lcase(key) ==  'message') {
+				return prop[key];	
+			}
+		}
+		*/
 
-		for(x=1; x<= arrayLen(messages); ++x){
+		for(var x=1; x<= arrayLen(messages); ++x){
 			if(messages[x].type == constraint){
 				return replaceTemplateText(messages[x].message,prop);	
 			}
