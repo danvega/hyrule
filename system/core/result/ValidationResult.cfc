@@ -43,14 +43,15 @@ component accessors="true" {
 	 * param (string) type
 	 *
 	 */
-	public void function addError(required String class,required String level,required Struct property,required String type){
+	public void function addError(required String class,required String level,required Struct property,required String type,string message){
 		var error = new ValidationError();
 						
 		error.setClass(arguments.class);
 		error.setLevel(arguments.level);
 		error.setProperty(arguments.property.name);
 		error.setType(arguments.type);
-		error.setMessage(getValidationMessageProvider().getMessage(class & "." & arguments.property.name & "." & type,arguments.property));
+		local.message = structkeyExists(arguments,"message") ? arguments.message : getValidationMessageProvider().getMessage(class & "." & arguments.property.name & "." & type,arguments.property);
+		error.setMessage(local.message);
 		arrayAppend(variables.errors,error);
 		variables.propertyErrorCache[arguments.property.name] = true;
 	}
@@ -68,5 +69,11 @@ component accessors="true" {
 		
 		return messages;
 	}
+	
+
+	public  void function mergeValidationResult(required any result){
+		for(var validationError in arguments.result.getErrors())
+			ArrayAppend(variables.errors,validationError);
+	}	
 
 }
