@@ -61,7 +61,6 @@ component accessors="true" {
 	private ValidationResult function validateAgainstRuleSet(required any target,required string context, required any ruleSet,required string stopOnFirstFail){
 		var result = new ValidationResult(new ValidationMessageProvider( getSettingsBean() ));
 		var meta = getMetaData(arguments.target);
-		var targetname = meta.Name;
 		var properties = {};
 
 		//build a map of properties by name for fast lookup later
@@ -79,8 +78,6 @@ component accessors="true" {
 
 			// if this property already failed and we are stopping at first property failure skip this iteration 
 			if(result.propertyHasError(validationRule.getPropertyName()) && arguments.stopOnFirstFail == 'property') continue; 
-
-			var type = targetName & "." & validationRule.getPropertyName() & "." & validationRule.getConstraintName();
 
 			// if a context is requested and we do not find the property name in the context then skip this contstraint
 			if( arguments.context != "*"
