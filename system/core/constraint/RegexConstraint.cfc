@@ -20,12 +20,10 @@
 	}
 
 	public boolean function processValidate(any target, any property, any value){
-
-		if( isValid("regex",arguments.value,getPattern()) ){
+		// no point in performing regex on an empty string
+		if( !len(arguments.value) || isValid("regex",arguments.value,getPattern()) ){
 			return true;
 		}
-
 		return false;
 	}
-
 }
