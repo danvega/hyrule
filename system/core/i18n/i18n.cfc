@@ -37,7 +37,7 @@ component accessors="true" {
 		} else {
 			throw(
 				type="i18n",
-				message="Unable to find default messages properties file."
+				message="Unable to find default messages properties file.",
 				detail="We are unable to locate the default messages file 'default.properties' in the resource bundle path '#getSettingsBean().getRbPath()#'"
 				);
 		}
