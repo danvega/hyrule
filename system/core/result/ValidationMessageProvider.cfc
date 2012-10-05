@@ -53,7 +53,7 @@ component accessors="true" {
 		
 		// if you are here we couldn't find a message 
 		throw(
-			type="ValidationMessage"
+			type="ValidationMessage",
 			message="There is no message defined for type '#lcase(type)#'"
 		);
 		
