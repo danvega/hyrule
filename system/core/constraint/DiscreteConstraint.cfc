@@ -4,7 +4,7 @@ component extends="AbstractConstraint" accessors="true" {
 
 	public DiscreteConstraint function init(){
 		setClazz(this);
-		setConstraintName("REQUIRED");
+		setConstraintName("DISCRETE");
 		return this;
 	}
 
