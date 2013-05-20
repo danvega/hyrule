@@ -14,27 +14,37 @@ component accessors="true" {
 	/**
 	 * Constructor initializes our errors array
 	 * return ValidationResult
-	 */ 
+	 */
 	public validationResult function init(ValidationMessageProvider provider){
 		variables.errors = [];
 		setValidationMessageProvider(arguments.provider);
 		variables.propertyErrorCache = {};
 		return this;
 	}
-	
+
 	/**
 	 * I will determine if this result object containts any errors
 	 * return boolean
 	 */
 	public boolean function hasErrors() {
-		return (arrayLen(getErrors()) > 0); 
+		return (arrayLen(getErrors()) > 0);
 	}
-	
+
 	public boolean function propertyHasError(required string propertyName){
 		return StructKeyExists(variables.propertyErrorCache,arguments.propertyName);
 	}
-	
-	/** 
+
+	public array function propertyGetErrors(required string propertyName){
+		var errors = arrayNew(1);
+
+		if( propertyHasError(arguments.propertyName) ){
+			errors = variables.propertyErrorCache[arguments.propertyName];
+		}
+
+		return errors;
+	}
+
+	/**
 	 * I provide a way to add a new error to the errors array
 	 *
 	 * param (string) class
@@ -45,7 +55,7 @@ component accessors="true" {
 	 */
 	public void function addError(required String class,required String level,required Struct property,required String type,string message){
 		var error = new ValidationError();
-						
+
 		error.setClass(arguments.class);
 		error.setLevel(arguments.level);
 		error.setProperty(arguments.property.name);
@@ -53,27 +63,28 @@ component accessors="true" {
 		local.message = structkeyExists(arguments,"message") ? arguments.message : getValidationMessageProvider().getMessage(class & "." & arguments.property.name & "." & type,arguments.property);
 		error.setMessage(local.message);
 		arrayAppend(variables.errors,error);
-		variables.propertyErrorCache[arguments.property.name] = true;
+		param name="variables.propertyErrorCache.#arguments.property.name#" default="#arrayNew(1)#";
+		arrayAppend(variables.propertyErrorCache[arguments.property.name],error);
 	}
-	
+
 	/**
 	 * I provide a way to just get an array of error messages. When you call getErrors() you get an array
 	 * of error objects. I built this method as an easy way to just get the messages.
 	 */
 	public array function getErrorMessages(){
 		var messages = [];
-		
+
 		for( var i=1; i <= arrayLen(getErrors()); i++ ){
-			arrayAppend(messages,getErrors()[i].getMessage());	
+			arrayAppend(messages,getErrors()[i].getMessage());
 		}
-		
+
 		return messages;
 	}
-	
+
 
 	public  void function mergeValidationResult(required any result){
 		for(var validationError in arguments.result.getErrors())
 			ArrayAppend(variables.errors,validationError);
-	}	
+	}
 
 }
