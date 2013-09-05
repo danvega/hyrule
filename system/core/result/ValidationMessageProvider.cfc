@@ -37,13 +37,10 @@ component accessors="true" {
 				}
 			}
 		}		
-		/*
-		for(key in prop){
-			if(lcase(key) ==  'message') {
-				return prop[key];	
-			}
+		
+		if ( structKeyExists( arguments.prop, "message" ) ) {
+			return arguments.prop.message;
 		}
-		*/
 
 		for(var x=1; x<= arrayLen(messages); ++x){
 			if(messages[x].type == constraint){
