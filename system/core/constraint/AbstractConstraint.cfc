@@ -84,16 +84,30 @@ component accessors="true" {
 	 * I will return the id of an entity
 	 */
 	public any function getFieldTypeId(any entity){
-		var meta = getMetaData(arguments.entity);
+		var properties = getProperties(arguments.entity);
 		var id = 0;
 		
-		for( var x=1; x <= arrayLen(meta.properties); x++){
-			if( structKeyExists(meta.properties[x],"fieldtype") &&  meta.properties[x].fieldtype == "id"){
-				id = meta.properties[x].name;
+		for( var x=1; x <= arrayLen(properties); x++){
+			if( structKeyExists(properties[x],"fieldtype") &&  properties[x].fieldtype == "id"){
+				id = properties[x].name;
 				break;
 			}
 		}
 		
 		return id;
 	}	
+
+    private function getProperties(any entity) {
+    	var meta = getMetaData(arguments.entity);
+    	var props = [];
+    	while(structKeyExists(meta, 'extends')) {
+    		if(structKeyExists(meta, 'properties')) {
+    			for(var p in meta.properties) {
+    				props.append(p);
+    			}
+    		}
+    		meta = meta.extends;
+    	}
+    	return props;
+    } 	
 }
