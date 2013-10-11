@@ -54,8 +54,8 @@ component accessors="true" {
 		local.stopOnFirstFail = StructKeyExists(arguments,"stopOnFirstFail") ? arguments.stopOnFirstFail : getSettingsBean().getStopOnFirstFail();
 		
 		var ruleParser = getRuleParserFactory().getRuleParser();
-		var ruleSet = ruleParser.getValidationRuleSet(target);
-		return validateAgainstRuleSet(target,context,ruleSet,local.stopOnFirstFail);
+		var ruleSet = ruleParser.getValidationRuleSet(arguments.target);
+		return validateAgainstRuleSet(arguments.target,arguments.context,ruleSet,local.stopOnFirstFail);
 	}
 
 	private ValidationResult function validateAgainstRuleSet(required any target,required string context, required any ruleSet,required string stopOnFirstFail){
@@ -83,7 +83,7 @@ component accessors="true" {
 			if( arguments.context != "*"
 				&& !listFindNoCase(arguments.context,validationRule.getPropertyName())
 				&& !intersects(arguments.context,( isNull(validationRule.getContext()) ? "" : validationRule.getContext() ))) continue;
-
+			
 			var propertyValue = evaluate("arguments.target.get#validationRule.getPropertyName()#()");
 			var constraint = getConstraintFactory().getConstraint(validationRule.getConstraintName());
 			

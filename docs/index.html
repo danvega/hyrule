@@ -364,6 +364,10 @@
 					<p>These messages were just meant to give you something out of the box. If you want to create your own custom messages you can.  You can define a whole set of custom messages or just override a single one. First let's look at how to customize the entire set of messages. Instead of using the default resource bundle path and file we can create our own properties file. Simply copy over the default.properties to a location in your project and customize the messages. When you create an instance of Hyrule simply pass in the path to your custom error messages.</p>
 					<script src="https://gist.github.com/2343717.js"> </script>
 
+					<h3>Customizing Error Messages</h3>
+
+					<h4>Using properties file</h4>
+
 					<p>What if you just wanted to change a single error message? Let's say we have a user object that has a property called ssn. We want our message to read "The Social Security Number you provided is not in the format of xxx-xx-xxxx". You can add custom messages by appending them to the properties file in the following format.</p>
 					<code>
 						{ObjectName}.{Field}.{ConstraintType}=Message
@@ -374,11 +378,26 @@
 					<code>
 						user.ssn.type.ssn=The Social Security Number you provided is not in the format of xxx-xx-xxxx. 
 					</code>					
+					<br><br>
+					<h4>Using the messages attribute</h4>
+
+					<p>To define a message on the property add a message attribute with the message. While convenient there is no Internationalization and Localization support for this option.</p>
+
+					<h4>Multiple messages defined</h4>
+
+					<p>In case a message is defined in multiple places (ie properties file and message attribute) the following order is used to return the correct one:
+						<ol>
+							<li>properties file</li>
+							<li>isValid message (if using isValid)</li>
+							<li>messages attribute</li>
+							<li>constraint message (ie required)</li>
+						</ol>
+					<p>
 
 					<a name="localization"></a>
 					<h2>Internationalization and Localization</h2>
 
-					<p>The framework also gives you the ability to localize your validation error messages. As we looked at in the previous section you can set the resource bundle path using a configuration setting. Now that you have the path to this folder set we need to take a look at selecting the correct properties file. The locale is determined in the following order.</p>
+					<p>The framework also gives you the ability to localize your validation error messages. As we looked at in the previous section you can set the resource bundle path using a configuration setting. Now that you have the path to this folder set we need to take a look at selecting the correct properties file (located in system/i18n). The locale is determined in the following order.</p>
 					<ol>
 						<li>Has a locale been passed into the validate function, if so use it.</li>
 						<li>Is there a resource bundle for the current locale ( getLocaleShort() ) - Check for file</li>
