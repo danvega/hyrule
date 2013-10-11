@@ -1,1 +1,0 @@
-<cfinclude template="/coldmvc/index.cfm" />
