@@ -1,0 +1,1677 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"carriers",
+				"carriersRetired"
+			],
+			[
+				"prici",
+				"principalCarrier"
+			],
+			[
+				"prin",
+				"principalCarrier"
+			],
+			[
+				"addi",
+				"additionalContact"
+			],
+			[
+				"process",
+				"getProcessInfo"
+			],
+			[
+				"write",
+				"writeDump	fn. (cfscript)"
+			],
+			[
+				"document",
+				"documentInfo"
+			],
+			[
+				"age",
+				"agencyID"
+			],
+			[
+				"upload",
+				"uploadError"
+			],
+			[
+				"windstorm",
+				"windstormCoverage"
+			],
+			[
+				"cfinvo",
+				"cfinvokeargument	Tag (cmfl)"
+			],
+			[
+				"product",
+				"productLine"
+			],
+			[
+				"windRejection",
+				"windRejectionTabContent"
+			],
+			[
+				"structKey",
+				"structKeyExists	fn. (cfscript)"
+			],
+			[
+				"res",
+				"reset=\"true\"	reset"
+			],
+			[
+				"cfc",
+				"cfc_XML_Quote"
+			],
+			[
+				"output",
+				"output=\"false\"	output"
+			],
+			[
+				"getTrigge",
+				"getTriggerCollections"
+			],
+			[
+				"exclude",
+				"excludeWindstormCoverage"
+			],
+			[
+				"structK",
+				"structKeyExists	fn. (cfscript)"
+			],
+			[
+				"writ",
+				"writeDump	fn. (cfscript)"
+			],
+			[
+				"generateISO",
+				"generateISOStagingData	fn. this"
+			],
+			[
+				"get",
+				"getDistinctReportQuarters	fn. this"
+			],
+			[
+				"recovery",
+				"recoveryTypes"
+			],
+			[
+				"premium",
+				"PremiumID"
+			],
+			[
+				"optional",
+				"optionalEndorsements"
+			],
+			[
+				"condo",
+				"condominium"
+			],
+			[
+				"occup",
+				"getOccupancyTypes"
+			],
+			[
+				"getBrow",
+				"getBrowseQuotes_query"
+			],
+			[
+				"policyD",
+				"policyID"
+			],
+			[
+				"cfquery",
+				"cfqueryparam	Tag (cmfl)"
+			],
+			[
+				"serializ",
+				"serializeJSON	fn. (cfscript)"
+			],
+			[
+				"outp",
+				"output=\"console\"	output"
+			],
+			[
+				"mock",
+				"mockAdditionalLocation	fn. this"
+			],
+			[
+				"optionalEndorse",
+				"optionalEndorsementTemplate"
+			],
+			[
+				"poliy",
+				"policyID"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"Training",
+				"TrainingSchedule"
+			],
+			[
+				"entityLoad",
+				"entityLoadByPK"
+			],
+			[
+				"endorse",
+				"endorsementID"
+			],
+			[
+				"policyEndorse",
+				"policyEndorsementID"
+			],
+			[
+				"html",
+				"html	html"
+			],
+			[
+				"repe",
+				"repeat-x"
+			],
+			[
+				"showSub",
+				"showSubscribeForm"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"list-style",
+				"list-style-type"
+			],
+			[
+				"structkey",
+				"structKeyExists	fn. (cfscript)"
+			],
+			[
+				"show",
+				"showSpecialPlacement"
+			],
+			[
+				"seria",
+				"serializeJSON	Function (cfscript)"
+			],
+			[
+				"lastName",
+				"lastNameHeader"
+			],
+			[
+				"seri",
+				"serializeJSON	Function (cfscript)"
+			],
+			[
+				"isValid",
+				"isValidFEIN"
+			],
+			[
+				"cfscri",
+				"CFSCRIPT	Tag (cfml)"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"git:",
+				"Git: Diff Tool Current File"
+			],
+			[
+				"git:statu",
+				"Git: Status"
+			],
+			[
+				"git:stat",
+				"Git: Status"
+			],
+			[
+				"svn:update",
+				"SVN: Update"
+			],
+			[
+				"svn:comm",
+				"SVN: (File) Commit"
+			],
+			[
+				"svn:com",
+				"SVN: Commit…"
+			],
+			[
+				"svn:upd",
+				"SVN: Update"
+			],
+			[
+				"svn:commit",
+				"SVN: (File) Commit"
+			],
+			[
+				"svn:diff",
+				"SVN: (File) Diff"
+			],
+			[
+				"svn:rever",
+				"SVN: (File) Revert"
+			],
+			[
+				"svn:commi",
+				"SVN: (File) Commit"
+			],
+			[
+				"svn:log",
+				"SVN: (File) Log"
+			],
+			[
+				"svn:updat",
+				"SVN: Update"
+			],
+			[
+				"svn:clean",
+				"SVN: Cleanup"
+			],
+			[
+				"svn:cleanu",
+				"SVN: Cleanup"
+			],
+			[
+				"svn:ud",
+				"SVN: Update"
+			],
+			[
+				"svn:rev",
+				"SVN: (File) Revert"
+			],
+			[
+				"svn:blame",
+				"SVN: (File) Blame"
+			],
+			[
+				"svn:cle",
+				"SVN: Cleanup"
+			],
+			[
+				"svn:comi",
+				"SVN: Commit…"
+			],
+			[
+				"svn:u",
+				"SVN: Update"
+			],
+			[
+				"",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				"svn:revert",
+				"SVN: (File) Revert"
+			],
+			[
+				"form",
+				"FormatSQL: Format SQL statement"
+			],
+			[
+				"svn:fi",
+				"SVN: (File) Log"
+			],
+			[
+				"svn:reve",
+				"SVN: (File) Revert"
+			],
+			[
+				"svn:upda",
+				"SVN: Update"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"svn:remo",
+				"SVN: (File) Diff, Remote"
+			],
+			[
+				"html",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"svn:blam",
+				"SVN: (File) Blame"
+			],
+			[
+				"commit",
+				"SVN: Commit…"
+			],
+			[
+				"package",
+				"Package Control: Disable Package"
+			],
+			[
+				"svn:status",
+				"SVN: Status"
+			],
+			[
+				"svn:stat",
+				"SVN: Status"
+			],
+			[
+				"svn:up",
+				"SVN: Update"
+			],
+			[
+				"upgrade",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"packa",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"svn",
+				"SVN: Status"
+			],
+			[
+				"mxun",
+				"MXUnit: Run tests"
+			],
+			[
+				"mx",
+				"MXUnit: Run tests"
+			],
+			[
+				"mxu",
+				"MXUnit: Run tests"
+			],
+			[
+				"mxunit",
+				"MXUnit: Run tests"
+			],
+			[
+				"bootstrap",
+				"Snippet: Bootstrap basic two column grid"
+			],
+			[
+				"svn:",
+				"SVN: (File) Log"
+			],
+			[
+				"bootstrap form",
+				"Snippet: Bootstrap horizontal form"
+			],
+			[
+				"svn:Comm",
+				"SVN: Commit…"
+			],
+			[
+				"cfm",
+				"Set Syntax: ColdFusion Markup"
+			],
+			[
+				"SQL",
+				"FormatSQL: Format SQL statement"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"svn:bla",
+				"SVN: (File) Blame"
+			],
+			[
+				"svn:lo",
+				"SVN: (File) Log"
+			],
+			[
+				"htmlp",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"hm",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"svn:comit",
+				"SVN: Commit…"
+			],
+			[
+				"format",
+				"FormatSQL: Format SQL statement"
+			],
+			[
+				"forma",
+				"FormatSQL: Format SQL statement"
+			],
+			[
+				"svn:idff",
+				"SVN: (File) Diff"
+			],
+			[
+				"svn:id",
+				"SVN: (File) Diff"
+			],
+			[
+				"updat",
+				"SVN: Update"
+			],
+			[
+				"comm",
+				"SVN: Commit…"
+			],
+			[
+				"commi",
+				"SVN: Commit…"
+			],
+			[
+				"svn:co",
+				"SVN: (File) Commit"
+			],
+			[
+				"svn:udate",
+				"SVN: Update"
+			],
+			[
+				"log",
+				"SVN: Log"
+			],
+			[
+				"fomrsql",
+				"FormatSQL: Format SQL statement"
+			],
+			[
+				"set syntax sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"svn:file",
+				"SVN: (File) Log"
+			],
+			[
+				"svn:re",
+				"SVN: (File) Revert"
+			],
+			[
+				"update",
+				"SVN: Update"
+			],
+			[
+				"u",
+				"SVN: Update"
+			],
+			[
+				"gist",
+				"Gist: Update File"
+			],
+			[
+				"gist:",
+				"Gist: Add File to Gist"
+			],
+			[
+				"upda",
+				"Gist: Update File"
+			],
+			[
+				"svn:updaa",
+				"SVN: Update, Including Externals"
+			],
+			[
+				"comi",
+				"SVN: Commit…"
+			],
+			[
+				"svn:fil",
+				"SVN: (File) Log"
+			],
+			[
+				"svn:uda",
+				"SVN: Update"
+			],
+			[
+				"mxuni",
+				"MXUnit: Run tests"
+			],
+			[
+				"mxunt",
+				"MXUnit: Run tests"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"svn:l",
+				"SVN: (File) Log"
+			],
+			[
+				"svn:ig",
+				"SVN: (File) Ignore"
+			],
+			[
+				"add fold",
+				"Project: Add Folder"
+			],
+			[
+				"add fod",
+				"Project: Add Folder"
+			],
+			[
+				"svnupdate",
+				"SVN: Update"
+			],
+			[
+				"svnL",
+				"SVN: Log"
+			],
+			[
+				"add fol",
+				"Project: Add Folder"
+			],
+			[
+				"add",
+				"Project: Add Folder"
+			],
+			[
+				"add folder",
+				"Project: Add Folder"
+			],
+			[
+				"addo",
+				"Project: Add Folder"
+			],
+			[
+				"add fo",
+				"Project: Add Folder"
+			],
+			[
+				"addfol",
+				"Project: Add Folder"
+			],
+			[
+				"addfo",
+				"Project: Add Folder"
+			],
+			[
+				"bootra",
+				"Snippet: Bootstrap horizontal form"
+			],
+			[
+				"edit ",
+				"Project: Edit"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"bootstrap drop",
+				"Snippet: Bootstrap button dropdowns"
+			],
+			[
+				"bootstrap tab",
+				"Snippet: Bootstrap basic tabs"
+			],
+			[
+				"synta",
+				"Set Syntax: HTML"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"snipp",
+				"Snippet: html"
+			],
+			[
+				"add folde",
+				"Project: Add Folder"
+			],
+			[
+				"folder",
+				"Project: Add Folder"
+			],
+			[
+				"prety",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"packag",
+				"Package Control: List Packages"
+			],
+			[
+				"git",
+				"Git: Init"
+			],
+			[
+				"bootrap form",
+				"Snippet: Bootstrap horizontal form"
+			],
+			[
+				"add ",
+				"Project: Add Folder"
+			],
+			[
+				"bootstrap from",
+				"Snippet: Bootstrap basic four column grid"
+			],
+			[
+				"htmlpr",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"addo ",
+				"Project: Add Folder"
+			],
+			[
+				"bootstrap sc",
+				"Snippet: Bootstrap scripts reference"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"addf",
+				"Project: Add Folder"
+			],
+			[
+				"htm",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"coldfusion",
+				"ColdFusion: Insert UDF"
+			],
+			[
+				"bootstr",
+				"Snippet: Bootstrap primary button"
+			],
+			[
+				"brows",
+				"Preferences: Browse Packages"
+			],
+			[
+				"discover",
+				"Package Control: Discover Packages"
+			],
+			[
+				"bootstrap ",
+				"Snippet: Bootstrap basic three column grid"
+			],
+			[
+				"fetch",
+				"Fetch"
+			],
+			[
+				"add f",
+				"Project: Add Folder"
+			],
+			[
+				"bootr",
+				"Snippet: Bootstrap modal"
+			],
+			[
+				"bootstrap for",
+				"Snippet: Bootstrap horizontal form"
+			]
+		],
+		"width": 386.0
+	},
+	"console":
+	{
+		"height": 512.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/www/hyrule/system/core/result/ValidationMessageProvider.cfc",
+		"/C/www/hyrule/.gitignore",
+		"/C/websites/rex/branches/mainline/migration/Services/Agency/agencyAppointment.cfc",
+		"/C/websites/rex/branches/mainline/migration/Application/_extensions/_components/_XML/_Office/cfc_XML_Office.cfc",
+		"/C/websites/rex/branches/mainline/migration/AgencyAppointment/views/main/home.cfm",
+		"/C/websites/rex/branches/mainline/migration/AgencyAppointment/layouts/main.cfm",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1381439146/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1381439130/SVN",
+		"/C/websites/rex/branches/mainline/migration/Application/_extensions/_components/_Validation/SearchValidator.cfc",
+		"/C/websites/rex/branches/mainline/migration/test.cfm",
+		"/C/websites/rex/branches/mainline/entities/agency/office.cfc",
+		"/C/websites/rex/branches/mainline/migration/Application/assets/javascript/plugins/jquery.agencyAppointment.js",
+		"/C/websites/rex/branches/mainline/entities/agency/officeProgramOfInterest.cfc",
+		"/C/websites/rex/branches/mainline/entities/agencyResource/appointmentProgramsOfInterest.cfc",
+		"/C/websites/rex/branches/mainline/migration/AgencyAppointment/controllers/main.cfc",
+		"/C/websites/rex/branches/mainline/migration/agency/controllers/search.cfc",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1381347920/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1381347869/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1381344216/SVN",
+		"/C/websites/rex/branches/mainline/migration/application.cfc",
+		"/C/websites/rex/branches/mainline/migration/rest/layouts/main.cfm",
+		"/C/websites/rex/branches/mainline/migration/Application/.htaccess",
+		"/C/Program Files (x86)/Apache Software Foundation/Apache2.2/conf/extra/httpd-vhosts.conf",
+		"/C/Program Files (x86)/Apache Software Foundation/Apache2.2/conf/httpd.conf",
+		"/C/Users/dvega/Desktop/conf/extra/httpd-vhosts.conf",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1381331846/SVN",
+		"/C/websites/rex/branches/mainline/migration/Application/web.rewriteRules.config",
+		"/C/websites/rex/branches/mainline/frameworks/mxunit/web.config",
+		"/C/websites/rex/branches/mainline/migration/Services/Common/rest.cfc",
+		"/C/websites/rex/branches/mainline/entities/agency/officeAdditionalContact.cfc",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1381259662/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1381259604/SVN",
+		"/C/websites/rex/branches/mainline/entities/agency/wcMarket.cfc",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1381247631/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1381177450/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1381175042/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1381173229/SVN",
+		"/C/websites/rex/branches/mainline/migration/AgencyAppointment/controllers/services.cfc",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1381155399/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1381151654/SVN",
+		"/C/websites/rex/branches/mainline/migration/AgencyAppointment/controllers/foo.cfc",
+		"/C/websites/rex/branches/mainline/entities/agency/volume.cfc",
+		"/C/websites/rex/branches/mainline/entities/agency/principleCompany.cfc",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1380744711/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1380723562/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1380655728/SVN",
+		"/C/websites/rex/branches/mainline/migration/Mura/requirements/fusebox5/errortemplates/fusebox.invalidAccessModifier.cfm",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1380313684/SVN",
+		"/C/websites/rex/branches/mainline/.settings/org.eclipse.core.resources.prefs",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1380226925/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1380205117/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1380204911/SVN",
+		"/C/websites/rex/branches/mainline/migration/Services/base.cfc",
+		"/C/websites/rex/branches/mainline/entities/base.cfc",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1380202378/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1380202371/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1380144308/SVN",
+		"/C/websites/rex/branches/mainline/frameworks/hyrule/samples/frameworks/coldbox/config/Routes.cfm",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1380144037/SVN",
+		"/C/websites/rex/branches/mainline/entities/agency/officeAdditionalContact.cfc.r57695",
+		"/C/websites/rex/branches/mainline/entities/agency/officeAdditionalContact.cfc.r57771",
+		"/C/Users/dvega/AppData/Roaming/Sublime Text 2/Packages/User/SVN.errors.log",
+		"/C/websites/rex/branches/mainline/migration/Application/test.cfm",
+		"/C/Users/dvega/Desktop/app.cfm",
+		"/C/websites/rex/branches/mainline/.svn/tmp/svn-2A123751",
+		"/C/websites/rex/branches/mainline/frameworks/hyrule/system/i18n/default.properties",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1380142407/SVN",
+		"/C/Users/dvega/Desktop/home.cfm",
+		"/C/websites/rex/branches/mainline/migration/Application/_extensions/_components/_DataAccess/_PolicyVersion/cfc_DA_PVD_PolicyVersionData.cfc",
+		"/C/websites/rex/branches/mainline/migration/Application/_extensions/_components/_DataAccess/_Document/cfc_DA_DT_DocumentTriggers.cfc",
+		"/C/websites/rex/branches/mainline/migration/Application/_extensions/_components/_DataAccess/_Document/cfc_DA_DM_DocumentData.cfc",
+		"/C/websites/rex/branches/mainline/entities/policy/boPolicyLocationDeductible.cfc",
+		"/C/websites/rex/branches/mainline/migration/AgencyAppointment/controllers/locations.cfc",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1380033689/SVN",
+		"/C/Users/dvega/Downloads/contentbox_1.5.6/config/Routes.cfm",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379964618/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379617604/SVN",
+		"/C/websites/rex/branches/mainline/migration/Application/assets/javascript/directive/policy/boOptionalEndorsementsDirective.js",
+		"/C/Users/dvega/Desktop/agencyAppointment.cfc",
+		"/C/Users/dvega/Desktop/timewarner",
+		"/C/websites/rex/branches/mainline/migration/config/sharedConfig.xml",
+		"/C/Users/dvega/Desktop/thread.cfm",
+		"/C/websites/rex/branches/mainline/migration/Application/PolicyMgmt/Agency/dsp_viewDocumentation.cfm",
+		"/C/websites/rex/branches/mainline/migration/AgencyAppointment/views/main/doPrint.cfm",
+		"/C/websites/rex/branches/mainline/migration/AgencyAppointment/views/main/print.cfm",
+		"/C/websites/rex/branches/mainline/migration/AgencyAppointment/views/main/submit.cfm",
+		"/C/websites/rex/branches/mainline/migration/AgencyAppointment/views/main/standardResponse.cfm",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379471383/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379470175/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379469689/SVN",
+		"/C/websites/rex/branches/mainline/migration/docs_webservice/Application.cfc",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379467035/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379451051/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379450982/SVN",
+		"/C/websites/rex/branches/mainline/migration/Application/assets/javascript/directive/agency/accountDirective.js",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379446850/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379446808/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379446552/SVN",
+		"/C/websites/rex/branches/mainline/migration/AgencyAppointment/views/main/doPrintPDF.cfm",
+		"/C/websites/rex/branches/mainline/migration/agency/views/document/view.cfm",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379445039/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379444846/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379444759/SVN",
+		"/C/websites/rex/branches/mainline/migration/Application/PolicyMgmt/Agency/Appointment/openDocument.cfm",
+		"/C/websites/rex/maverickdocuments/Agency/2013/June/875569/XML/09172013-122651-875569.xml",
+		"/C/websites/rex/branches/mainline/migration/Application/DocumentManagement/Documents/openDocument.cfm",
+		"/C/websites/rex/branches/mainline/migration/Application/PolicyMgmt/cfc_XML_Office_test.cfm",
+		"/C/websites/rex/branches/mainline/entities/FirstConfig/Config.cfc",
+		"/C/websites/rex/branches/mainline/migration/Application/_extensions/_components/_XML/_Quote/cfc_XML_Quote.cfc",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379359787/SVN",
+		"/C/websites/rex/branches/mainline/entities/policy/policy.cfc",
+		"/C/websites/rex/branches/mainline/migration/Services/User/usersService.cfc",
+		"/C/websites/rex/branches/mainline/entities/user/userSession.cfc",
+		"/C/websites/rex/branches/mainline/migration/Services/windstorm/windstormRuleSetService.cfc",
+		"/C/websites/rex/branches/mainline/migration/Resource/controllers/windstormDeductible.cfc",
+		"/C/websites/rex/branches/mainline/entities/user/user.cfc",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379358670/SVN",
+		"/C/websites/rex/branches/mainline/migration/Resource/views/windstormDeductible/edit.cfm",
+		"/C/websites/rex/branches/mainline/entities/pricing/boPricing/markel/boMinimumWindstormPercentageDeductible.cfc",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379356732/SVN",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379356724/SVN",
+		"/C/websites/rex/branches/mainline/migration/RexUnderwriting/app/services/UserService.cfc",
+		"/C/websites/rex/branches/mainline/migration/Application/PolicyMgmt/submission/Quote/Pricing/Comments.cfm",
+		"/C/websites/rex/branches/mainline/migration/DB/Punisher/1stComp/2013-08-16_PU-8_CaShortRate.sql",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379344097/SVN",
+		"/C/websites/rex/branches/mainline/migration/Services/Policy/boPolicyService.cfc",
+		"/C/websites/rex/branches/mainline/migration/Application/_extensions/_components/_Validation/bo/boValidationService.cfc",
+		"/c/users/dvega/appdata/local/temp/sublime-svn-1379104106/SVN"
+	],
+	"find":
+	{
+		"height": 59.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\websites\\rex\\branches\\mainline\\",
+			"C:\\websites\\rex\\branches\\mainline\\,C:\\websites\\rex\\branches\\mainline\\migration\\config",
+			"C:\\websites\\rex\\branches\\mainline\\",
+			"C:\\websites\\rex\\branches\\mainline\\migration",
+			"",
+			"C:\\websites\\rex\\branches\\mainline\\migration\\agency\\views,C:\\websites\\rex\\branches\\mainline\\migration\\Application\\assets\\javascript",
+			"C:\\websites\\rex\\branches\\mainline\\migration\\agency\\views",
+			"C:\\websites\\rex\\branches\\mainline\\migration\\Application\\assets\\javascript",
+			"C:\\websites\\rex\\branches\\mainline\\migration\\agency\\views",
+			"C:\\websites\\rex\\branches\\mainline\\",
+			"C:\\websites\\rex\\branches\\mainline\\migration\\Application\\assets\\javascript",
+			"C:\\websites\\rex\\branches\\mainline\\migration\\Application\\javascript",
+			"C:\\websites\\rex\\branches\\mainline\\",
+			"C:\\websites\\rex\\branches\\mainline\\entities",
+			"C:\\websites\\rex\\branches\\mainline\\",
+			"C:\\websites\\rex\\branches\\mainline\\migration\\insured",
+			"C:\\websites\\rex\\branches\\mainline\\",
+			"C:\\websites\\rex\\branches\\mainline\\migration\\insured",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"getProducers",
+			"producers",
+			"enterprise",
+			"producer",
+			".on",
+			"\">\n",
+			".accordion-heading",
+			"showCurrentSection",
+			"expand",
+			"displayErrors",
+			"save",
+			"writeDump",
+			"data",
+			"isValidCarriersRetiredReason",
+			"init",
+			"carriersRetired",
+			"onRequest",
+			"carriersRetired",
+			"carriersR",
+			"carriersReason",
+			"isValidCarriersRetiredReason",
+			"carriersRetired",
+			"createObjectArray",
+			"2013",
+			"abort",
+			"onError",
+			"239",
+			"getTemplates.S_XMLfunction",
+			"producer",
+			"getTemplates",
+			"validate",
+			"validateSection",
+			"enterprise",
+			"producers",
+			"validationSer",
+			"\n<",
+			"length",
+			"original",
+			"Open_Print",
+			"open_document",
+			"coldspring",
+			"\n	",
+			"enterpriseIDList",
+			"AgencyAppointment",
+			"cfdump",
+			"cftry",
+			"cfswitch",
+			"Agency_Sample_XML ",
+			"DocumentTrigger",
+			"s_xml",
+			"generatePDF",
+			"winds",
+			"WindstormDeductibleQuery",
+			"windstorm",
+			"userService",
+			"windstorm",
+			"setCrea",
+			"duplicateRuleValidation",
+			"getUser",
+			"disableEndorsableStipulationStatus",
+			"Quote Stipulations:",
+			"Please check the file and try again.",
+			"userService",
+			"BOPInsuredLocations",
+			"insuredInfo",
+			"BOPAdditionalCoverages",
+			"editLocationWindstormForm",
+			"editLocationWindstorm",
+			"id=\"formMeetRequirements\"",
+			"Change Windstorm Coverage",
+			"PU-97 When saving a locaiton in an endorsement we only need to add  distance to coast if the location is in a windstorm area.",
+			"Endorsement Wizard",
+			"Page",
+			"page",
+			"pe_legalfirstname",
+			"dump",
+			"validationErrors",
+			"Does insured meet all eligibility requirements listed above",
+			"table=\"policy_InsuredLocations_IL\"",
+			"extends=\"location\"",
+			"combinedWindstormResult",
+			"validatePolicy",
+			"windstorm",
+			"getBoQuotePricing",
+			"document",
+			"noticePrintBo",
+			"GenerateTerrorismNotice",
+			"Open_Print",
+			"pdf",
+			"/>\n",
+			"getAccountInfo",
+			"ReferStatus",
+			"function submitQuoteProposal",
+			"productLin",
+			"windstor",
+			"windRejection",
+			"<span>Wind Rejection</span>",
+			"windstorm",
+			"console.log",
+			"store.isWindstormCoverageExcluded",
+			"windstorm",
+			"store",
+			"boNoticeTab",
+			"download_pdf",
+			"boNoticeTab",
+			"forwardQuote",
+			"cfc_XML_Quote.cfc",
+			"issuancePrintBo",
+			"ordiancn",
+			"ordinanceAndLaw",
+			"policy_bo_endorsements_propertyInfo_BEPI",
+			"<span>Notices</span>",
+			" 		:",
+			"insuredName",
+			"bo",
+			"resetpassword",
+			"wc",
+			"wcNoticeTab",
+			"terroris",
+			"excludeWindstormCoverage",
+			"policy_insuredLocations_IL",
+			"GetQuoteStipulationQuestions",
+			"--->\n",
+			"<div class=\"quoteRight floatRight\">",
+			"<div class=\"quoteRight floatRight\">\n	</tr>						\n			\n					</tbody></table>				\n				\n				</div>\n		</div>",
+			"<td style=\"background-color:#E6E6E6; border:1px solid #AAAAAA; font-weight:bold;\">Stipulations",
+			"Stipulations",
+			"agencyInfo"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"branches\\iso_patch",
+			"",
+			"errors",
+			"",
+			"clients.abc",
+			"##",
+			"#$.content",
+			"<li>",
+			"rContent.getValue",
+			"rContent",
+			"will",
+			"",
+			"../../../Application/PolicyMgmt/Policies/",
+			"",
+			"ACTIVE = 1",
+			"*****************",
+			"dvega@riskexchange.com",
+			"&#8984",
+			"../../images/",
+			"Eps",
+			"",
+			"method"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 126.0
+	},
+	"output.git":
+	{
+		"height": 132.0
+	},
+	"output.tests":
+	{
+		"height": 376.0
+	},
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"validationmessageprovider",
+				"system/core/result/ValidationMessageProvider.cfc"
+			],
+			[
+				"cfc_office",
+				"migration/Application/_extensions/_components/_XML/_Office/cfc_XML_Office.cfc"
+			],
+			[
+				"agenc",
+				"migration/Services/Agency/agencyAppointment.cfc"
+			],
+			[
+				"office_xml",
+				"migration/Application/_extensions/_components/_XML/_Office/cfc_XML_Office.cfc"
+			],
+			[
+				"office",
+				"entities/agency/office.cfc"
+			],
+			[
+				"tet.cfm",
+				"migration/test.cfm"
+			],
+			[
+				"earchvalidator.cfc",
+				"migration/Application/_extensions/_components/_Validation/SearchValidator.cfc"
+			],
+			[
+				"search.",
+				"migration/agency/controllers/search.cfc"
+			],
+			[
+				"officeprogramofinterest",
+				"entities/agency/officeProgramOfInterest.cfc"
+			],
+			[
+				"agencyappo",
+				"migration/Services/Agency/agencyAppointment.cfc"
+			],
+			[
+				"appointmentprogramsofinterest",
+				"entities/agencyResource/appointmentProgramsOfInterest.cfc"
+			],
+			[
+				"home.cfm",
+				"migration/AgencyAppointment/views/main/home.cfm"
+			],
+			[
+				"home",
+				"migration/AgencyAppointment/views/main/home.cfm"
+			],
+			[
+				"rewrite",
+				"migration/Application/web.rewriteRules.config"
+			],
+			[
+				"web.rewriterules.config",
+				"migration/Application/web.rewriteRules.config"
+			],
+			[
+				"web",
+				"frameworks/mxunit/web.config"
+			],
+			[
+				".ht",
+				"migration/Application/.htaccess"
+			],
+			[
+				"rest/layouts",
+				"migration/rest/layouts/main.cfm"
+			],
+			[
+				"rest",
+				"migration/Services/Common/rest.cfc"
+			],
+			[
+				"appli",
+				"migration/application.cfc"
+			],
+			[
+				"officeadditionalcontact",
+				"entities/agency/officeAdditionalContact.cfc"
+			],
+			[
+				"agencyapp",
+				"migration/Services/Agency/agencyAppointment.cfc"
+			],
+			[
+				"wcmarke",
+				"entities/agency/wcMarket.cfc"
+			],
+			[
+				"applicat",
+				"migration/application.cfc"
+			],
+			[
+				"aplica",
+				"migration/application.cfc"
+			],
+			[
+				"applic",
+				"migration/application.cfc"
+			],
+			[
+				"principlecompany",
+				"entities/agency/principleCompany.cfc"
+			],
+			[
+				"rest.cf",
+				"migration/Services/Common/rest.cfc"
+			],
+			[
+				"rest.ccfc",
+				"migration/Mura/requirements/fusebox5/errortemplates/fusebox.invalidAccessModifier.cfm"
+			],
+			[
+				"volume",
+				"entities/agency/volume.cfc"
+			],
+			[
+				"office.cfc",
+				"entities/agency/office.cfc"
+			],
+			[
+				"agencyappoint",
+				"migration/Services/Agency/agencyAppointment.cfc"
+			],
+			[
+				"applica",
+				"migration/application.cfc"
+			],
+			[
+				"officeaddion",
+				"entities/agency/officeAdditionalContact.cfc"
+			],
+			[
+				"services/base",
+				"migration/Services/base.cfc"
+			],
+			[
+				"entities/base",
+				"entities/base.cfc"
+			],
+			[
+				"routes.cfm",
+				"frameworks/hyrule/samples/frameworks/coldbox/config/Routes.cfm"
+			],
+			[
+				"officeaddtion",
+				"entities/agency/officeAdditionalContact.cfc"
+			],
+			[
+				"appl",
+				"migration/application.cfc"
+			],
+			[
+				"test",
+				"migration/Application/test.cfm"
+			],
+			[
+				"cfc_da_pvd_policyversiondata.cfc",
+				"migration/Application/_extensions/_components/_DataAccess/_PolicyVersion/cfc_DA_PVD_PolicyVersionData.cfc"
+			],
+			[
+				"cfc_da_dm_documentdata.cfc",
+				"migration/Application/_extensions/_components/_DataAccess/_Document/cfc_DA_DM_DocumentData.cfc"
+			],
+			[
+				"cfc_da_dt_documenttriggers.cfc",
+				"migration/Application/_extensions/_components/_DataAccess/_Document/cfc_DA_DT_DocumentTriggers.cfc"
+			],
+			[
+				"office.c",
+				"entities/agency/office.cfc"
+			],
+			[
+				"da_dm_documentdata",
+				"migration/Application/_extensions/_components/_DataAccess/_Document/cfc_DA_DM_DocumentData.cfc"
+			],
+			[
+				"locationded",
+				"entities/policy/boPolicyLocationDeductible.cfc"
+			],
+			[
+				"entties/base.",
+				"entities/base.cfc"
+			],
+			[
+				"services/base.cf",
+				"migration/Services/base.cfc"
+			],
+			[
+				"base",
+				"entities/base.cfc"
+			],
+			[
+				"ofice",
+				"entities/agency/office.cfc"
+			],
+			[
+				"route",
+				"frameworks/hyrule/samples/frameworks/coldbox/config/Routes.cfm"
+			],
+			[
+				"migration/services/agency/agencyappointment.cfc",
+				"migration/Services/Agency/agencyAppointment.cfc"
+			],
+			[
+				"booptionalendorsementdire",
+				"migration/Application/assets/javascript/directive/policy/boOptionalEndorsementsDirective.js"
+			],
+			[
+				"sharedco",
+				"migration/config/sharedConfig.xml"
+			],
+			[
+				"shared",
+				"migration/config/sharedConfig.xml"
+			],
+			[
+				"agency",
+				"migration/Services/Agency/agencyAppointment.cfc"
+			],
+			[
+				"migration/agencyappointment/controllers/main.cfc",
+				"migration/AgencyAppointment/controllers/main.cfc"
+			],
+			[
+				"docs_webservice/app",
+				"migration/docs_webservice/Application.cfc"
+			],
+			[
+				"dsp_viewdocumentation",
+				"migration/Application/PolicyMgmt/Agency/dsp_viewDocumentation.cfm"
+			],
+			[
+				"accountdirec",
+				"migration/Application/assets/javascript/directive/agency/accountDirective.js"
+			],
+			[
+				"test.cfm",
+				"migration/Application/test.cfm"
+			],
+			[
+				"cfc_da_dm_documentdata",
+				"migration/Application/_extensions/_components/_DataAccess/_Document/cfc_DA_DM_DocumentData.cfc"
+			],
+			[
+				"opendocument",
+				"migration/Application/PolicyMgmt/Agency/Appointment/openDocument.cfm"
+			],
+			[
+				"cfc_da_dt_documenttriggers",
+				"migration/Application/_extensions/_components/_DataAccess/_Document/cfc_DA_DT_DocumentTriggers.cfc"
+			],
+			[
+				"cfc_xml_off",
+				"migration/Application/_extensions/_components/_XML/_Office/cfc_XML_Office.cfc"
+			],
+			[
+				"cfc_xml_office",
+				"migration/Application/PolicyMgmt/cfc_XML_Office_test.cfm"
+			],
+			[
+				"config",
+				"entities/FirstConfig/Config.cfc"
+			],
+			[
+				"application",
+				"migration/application.cfc"
+			],
+			[
+				"cfc_da_dm_docum",
+				"migration/Application/_extensions/_components/_DataAccess/_Document/cfc_DA_DM_DocumentData.cfc"
+			],
+			[
+				"cfc_da_dt_",
+				"migration/Application/_extensions/_components/_DataAccess/_Document/cfc_DA_DT_DocumentTriggers.cfc"
+			],
+			[
+				"cfc_xml_quote",
+				"migration/Application/_extensions/_components/_XML/_Quote/cfc_XML_Quote.cfc"
+			],
+			[
+				"policy",
+				"entities/policy/policy.cfc"
+			],
+			[
+				"sharedcon",
+				"migration/config/sharedConfig.xml"
+			],
+			[
+				"usersession",
+				"entities/user/userSession.cfc"
+			],
+			[
+				"bominimumwindstormpercentagedeductible",
+				"entities/pricing/boPricing/markel/boMinimumWindstormPercentageDeductible.cfc"
+			],
+			[
+				"userservice",
+				"migration/RexUnderwriting/app/services/UserService.cfc"
+			],
+			[
+				"windstormrul",
+				"migration/Services/windstorm/windstormRuleSetService.cfc"
+			],
+			[
+				"user.c",
+				"entities/user/user.cfc"
+			],
+			[
+				"user.ccfc",
+				"migration/Mura/requirements/fusebox5/errortemplates/fusebox.invalidAccessModifier.cfm"
+			],
+			[
+				"rest.cfc",
+				"migration/Services/Common/rest.cfc"
+			],
+			[
+				"validationmessage",
+				"frameworks/hyrule/system/core/result/ValidationMessageProvider.cfc"
+			],
+			[
+				"bovalidat",
+				"migration/Application/_extensions/_components/_Validation/bo/boValidationService.cfc"
+			],
+			[
+				"entities/location",
+				"entities/policy/policyLocation.cfc"
+			],
+			[
+				"location",
+				"migration/AgencyAppointment/controllers/locations.cfc"
+			],
+			[
+				"windstorm",
+				"entities/pricing/boPricing/markel/boMinimumWindstormPercentageDeductible.cfc"
+			],
+			[
+				"bopolicyservice",
+				"migration/Services/Policy/boPolicyService.cfc"
+			],
+			[
+				"bovalidationservice",
+				"migration/Application/_extensions/_components/_Validation/bo/boValidationService.cfc"
+			],
+			[
+				"county",
+				"entities/reference/county.cfc"
+			],
+			[
+				"directive",
+				"migration/Application/assets/javascript/directive/agency/accountDirective.js"
+			],
+			[
+				"cfc_code",
+				"migration/Application/_extensions/_components/_CodeSnippets/cfc_CS_CodeSnippets.cfc"
+			],
+			[
+				"code_snipp",
+				"migration/Application/unitTests/_codeSnippets/cfc_CS_codeSnippetsTest.cfc"
+			],
+			[
+				"windstormrule",
+				"migration/Services/windstorm/windstormRuleSetService.cfc"
+			],
+			[
+				"windstormrulese",
+				"migration/Services/windstorm/windstormRuleSetService.cfc"
+			],
+			[
+				"policies",
+				"migration/Application/Stylevision/Schema/Policies.xsd"
+			],
+			[
+				"cfc_da_dr_borules",
+				"migration/Application/_extensions/_components/_DataAccess/_Document/Rules/cfc_DA_DR_BORules.cfm"
+			],
+			[
+				"borule",
+				"migration/Application/_extensions/_components/_DataAccess/_Document/Rules/cfc_DA_DR_BORules.cfm"
+			],
+			[
+				"bolocationwindstormendorsement",
+				"migration/Application/assets/javascript/plugins/policyMgmt/policies/policyEndorsements/boLocationWindstormEndorsement.js"
+			],
+			[
+				"isoservice",
+				"migration/Services/pricing/isoService.cfc"
+			],
+			[
+				"boendorsement",
+				"migration/policy/controllers/boEndorsement.cfc"
+			],
+			[
+				"getwindstormrule",
+				"migration/Services/windstorm/windstormRuleSetService.cfc"
+			],
+			[
+				"boendorsementservice",
+				"migration/Services/endorsement/boEndorsementService.cfc"
+			],
+			[
+				"cfc_cs_codesnippets.cfc",
+				"migration/Application/_extensions/_components/_CodeSnippets/cfc_CS_CodeSnippets.cfc"
+			],
+			[
+				"cfc_l_layout",
+				"migration/Application/_extensions/_components/_Layout/cfc_L_Layout.cfc"
+			],
+			[
+				"dsp_viewendors",
+				"migration/Application/PolicyMgmt/Policies/Endorsements/dsp_viewEndorsements.cfm"
+			],
+			[
+				"bopricing",
+				"migration/Services/pricing/boPricingService.cfc"
+			],
+			[
+				"bopricing/home",
+				"migration/policy/views/boPricing/home.cfm"
+			],
+			[
+				"accountdirecte.mn",
+				"migration/Application/assets/javascript/directive/agency/accountDirective.min.js"
+			],
+			[
+				"bopolicyser",
+				"migration/Services/Policy/boPolicyService.cfc"
+			],
+			[
+				"bopricing/home.cfm",
+				"migration/policy/views/boPricing/home.cfm"
+			],
+			[
+				"lookupwrapper",
+				"entities/webServices/dunBradstreet/lookupWrapper.cfc"
+			],
+			[
+				"user.cfc",
+				"entities/user/user.cfc"
+			],
+			[
+				"bopricingserv",
+				"migration/Services/pricing/boPricingService.cfc"
+			],
+			[
+				"application.cfc",
+				"migration/application.cfc"
+			],
+			[
+				"quotedirect",
+				"migration/Application/assets/javascript/directive/agency/quoteDirective.js"
+			],
+			[
+				"boadditionalnsuredvali",
+				"migration/Application/_extensions/_components/_Validation/bo/boBaseAdditionalInsuredValidator.cfc"
+			],
+			[
+				"bovalidation",
+				"migration/Application/_extensions/_components/_Validation/bo/boValidationService.cfc"
+			],
+			[
+				"document/view.cfm",
+				"migration/agency/views/document/view.cfm"
+			],
+			[
+				"messageseri",
+				"migration/Services/Common/messageService.cfc"
+			],
+			[
+				"cfc_cs_code",
+				"migration/Application/_extensions/_components/_CodeSnippets/cfc_CS_CodeSnippets.cfc"
+			],
+			[
+				".htac",
+				"migration/Application/.htaccess"
+			],
+			[
+				"bodistanc",
+				"entities/reference/boDistanceToCoast.cfc"
+			],
+			[
+				"accountdirect",
+				"migration/Application/assets/javascript/directive/agency/accountDirective.min.js"
+			],
+			[
+				"bopolic",
+				"entities/policy/boPolicy.cfc"
+			],
+			[
+				"framework",
+				"migration/framework.cfc"
+			],
+			[
+				"applicai",
+				"migration/application.cfc"
+			],
+			[
+				"underwriter/cnt_viewquoteproposal.cfm",
+				"migration/Application/PolicyMgmt/submission/Underwriter/cnt_viewQuoteProposal.cfm"
+			],
+			[
+				"cnt_viewquoteproposal",
+				"migration/Application/PolicyMgmt/Agency/Accounts/cnt_viewQuoteProposal.cfm"
+			],
+			[
+				"viewquotepropoalprint",
+				"migration/Application/PolicyMgmt/submission/Underwriter/cnt_viewQuoteProposalPrint.cfm"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 360.0,
+	"status_bar_visible": true
+}

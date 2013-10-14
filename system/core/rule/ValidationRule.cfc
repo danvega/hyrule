@@ -4,6 +4,7 @@
 	property string constraintName;
 	property string constraintValue;
 	property string context;
+	property string message;
 
 	public ValidationRule function init(){
 		return this;
@@ -16,6 +17,10 @@
 		else
 			variables.constraintName = arguments.name;
 
+	}
+	
+	public boolean function hasMessage(){
+		return !isNULL(variables.message);
 	}
 
 }

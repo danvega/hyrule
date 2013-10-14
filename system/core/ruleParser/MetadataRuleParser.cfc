@@ -49,6 +49,9 @@ component accessors="true" extends="BaseRuleParser" implements="IRuleParser" {
 					if(structKeyExists(property,"context")) {
 						vr.setContext(property.context);
 					}
+					if(structKeyExists(property,"message")) {
+						vr.setMessage(property.message);
+					}				
 
 					ruleSet.addValidationRule(vr);
 				}
@@ -72,7 +75,6 @@ component accessors="true" extends="BaseRuleParser" implements="IRuleParser" {
 			//if the property name given isn't found skip over it instead of erroring our
 			if(!listFindNoCase(propertyNameList,propertyName))	continue;
 			var propertyConstraints = ruleContainerConstraints[propertyName];
-
 			for (propertyConstraintName in propertyConstraints){
 				//if the constraint name isn't recognized skip over it instead of erroring our
 				if(isValidConstraintName(propertyConstraintName)){
@@ -84,7 +86,9 @@ component accessors="true" extends="BaseRuleParser" implements="IRuleParser" {
 					if(structKeyExists(propertyConstraints,"context")) {
 						vr.setContext(propertyConstraints.context);
 					}
-
+					if(structKeyExists(propertyConstraints,"message")) {
+						vr.setMessage(propertyConstraints.message);
+					}			
 					ruleSet.addValidationRule(vr);
 				}
 			}

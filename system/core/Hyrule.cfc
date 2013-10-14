@@ -54,8 +54,8 @@ component accessors="true" {
 		local.stopOnFirstFail = StructKeyExists(arguments,"stopOnFirstFail") ? arguments.stopOnFirstFail : getSettingsBean().getStopOnFirstFail();
 		
 		var ruleParser = getRuleParserFactory().getRuleParser();
-		var ruleSet = ruleParser.getValidationRuleSet(arguments.target);
-		return validateAgainstRuleSet(arguments.target,arguments.context,ruleSet,local.stopOnFirstFail);
+		var ruleSet = ruleParser.getValidationRuleSet(target);
+		return validateAgainstRuleSet(target,context,ruleSet,local.stopOnFirstFail);
 	}
 
 	private ValidationResult function validateAgainstRuleSet(required any target,required string context, required any ruleSet,required string stopOnFirstFail){
@@ -83,7 +83,7 @@ component accessors="true" {
 			if( arguments.context != "*"
 				&& !listFindNoCase(arguments.context,validationRule.getPropertyName())
 				&& !intersects(arguments.context,( isNull(validationRule.getContext()) ? "" : validationRule.getContext() ))) continue;
-			
+
 			var propertyValue = evaluate("arguments.target.get#validationRule.getPropertyName()#()");
 			var constraint = getConstraintFactory().getConstraint(validationRule.getConstraintName());
 			
@@ -99,9 +99,18 @@ component accessors="true" {
 
 			if(!rulePassed){
 				//make sure the constraint is set as an attribute on the property
-				//(validation messaging assumes all constraints exist there
+				//(validation messaging assumes all constraints exist there				
+				var propertyToPass = duplicate(properties[validationRule.getPropertyName()]);
 				properties[validationRule.getPropertyName()][validationRule.getConstraintName()] = validationRule.getConstraintValue();
-				result.addError(properties[validationRule.getPropertyName()].className,'property',properties[validationRule.getPropertyName()],validationRule.getConstraintName());
+				
+				var args ={class=propertyToPass.className
+				           ,level='property'
+				           ,property=propertyToPass
+				           ,type=validationRule.getConstraintName()};
+				if(validationRule.hasMessage())
+					 args.message =  validationRule.getMessage();
+					 	        
+				result.addError(argumentCollection=args);
 				
 				//break out of the loop and stop validation if we are stopping on first object validation failure
 				if(arguments.stopOnFirstFail == 'object') break;

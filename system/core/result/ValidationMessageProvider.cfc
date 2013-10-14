@@ -23,7 +23,7 @@ component accessors="true" {
 		var property = listGetAt(fullType,listLen(fullType,'.')-1,'.');
 		var domain = lcase(listGetAt(fullType,listLen(fullType,'.')-2,'.'));
 		var type = domain & '.' & property & '.' & constraint;
-		
+
 		for(var i=1; i <= arrayLen(messages); ++i){
 			if(messages[i].type == type){
 				return replaceTemplateText(messages[i].message,prop);
@@ -37,10 +37,6 @@ component accessors="true" {
 				}
 			}
 		}		
-		
-		if ( structKeyExists( arguments.prop, "message" ) ) {
-			return arguments.prop.message;
-		}
 
 		for(var x=1; x<= arrayLen(messages); ++x){
 			if(messages[x].type == constraint){
@@ -50,7 +46,7 @@ component accessors="true" {
 		
 		// if you are here we couldn't find a message 
 		throw(
-			type="ValidationMessage",
+			type="ValidationMessage"
 			message="There is no message defined for type '#lcase(type)#'"
 		);
 		
