@@ -75,7 +75,7 @@ component accessors="true" extends="BaseRuleParser" implements="IRuleParser" {
 			//if the property name given isn't found skip over it instead of erroring our
 			if(!listFindNoCase(propertyNameList,propertyName))	continue;
 			var propertyConstraints = ruleContainerConstraints[propertyName];
-			for (propertyConstraintName in propertyConstraints){
+			for (var propertyConstraintName in propertyConstraints){
 				//if the constraint name isn't recognized skip over it instead of erroring our
 				if(isValidConstraintName(propertyConstraintName)){
 					var vr = new hyrule.system.core.rule.ValidationRule();
